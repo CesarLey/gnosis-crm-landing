@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="assets/favicon.jpg">
+    <title>Gnosis CRM - Gestiona tu Negocio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter/Outfit for clean SaaS look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo.jpg" alt="Gnosis Logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.html#features">Funcionalidades</a>
+                <a href="#" class="active" style="color: var(--primary-color);">Precios</a>
+                <a href="clients.html">Clientes</a>
+                <a href="resources.html">Recursos</a>
+                <a href="http://localhost:4200" class="btn-login" target="_blank">Inicia Sesión</a>
+                <a href="http://localhost:4200" class="btn-primary" target="_blank">Probar Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Page Header -->
+    <header class="pricing-header" style="padding-top: 120px; padding-bottom: 40px; text-align: center;">
+        <div class="container">
+            <h1>Elije el plan perfecto para tu negocio</h1>
+            <p style="color: var(--light-text); margin-top: 10px;">Sin contratos forzosos. Cancela cuando quieras.</p>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header center-text">
+                <h2>La solución más completa, <span class="highlight">al mejor precio</span></h2>
+                <div class="pricing-badges">
+                    <span class="badgex"><i class="fa-solid fa-check"></i> Prueba gratis por 14 días</span>
+                    <span class="badgex"><i class="fa-solid fa-check"></i> Los precios tienen IVA incluido</span>
+                    <span class="badgex"><i class="fa-solid fa-check"></i> Soporte Incluido</span>
+                </div>
+            </div>
+
+            <!-- Billing Toggle -->
+            <div class="billing-toggle">
+                <span>Pago Mensual</span>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="billingSwitch">
+                    <label for="billingSwitch"></label>
+                </div>
+                <span>Pago Anual <span class="discount-tag">-25%</span></span>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Plan Inicial -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Plan Inicial</h3>
+                        <div class="tags">
+                            <span class="tag-blue">Sólo Pago Mensual</span>
+                            <span class="tag-gray">Sin Promoción</span>
+                        </div>
+                        <div class="price-main">
+                            <span class="currency">$</span>49 <span class="period">MXN / mes</span>
+                        </div>
+                        <p class="price-subtitle">Sólo disponible en pago mensual</p>
+                    </div>
+                    <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-circle-check"></i> 1 Usuario</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 3 Facturas por Mes</li>
+                        <hr>
+                        <li><i class="fa-solid fa-check"></i> Punto de Venta</li>
+                        <li><i class="fa-solid fa-check"></i> Clientes</li>
+                        <li><i class="fa-solid fa-check"></i> Impresión de Tickets</li>
+                        <li><i class="fa-solid fa-check"></i> Recargas y Servicios</li>
+                    </ul>
+                </div>
+
+                <!-- Plan Esencial -->
+                <div class="pricing-card dynamic-price-card" data-price-monthly="399" data-price-annual="299"
+                    data-annual-total="3,588">
+                    <div class="card-header">
+                        <h3>Plan Esencial</h3>
+                        <div class="price">
+                            <span class="old-price">$399</span> <span class="discount-badge">-25%</span>
+                        </div>
+                        <div class="price-main">
+                            <span class="currency">$</span>299 <span class="period">MXN / mes</span>
+                        </div>
+                        <p class="price-subtitle">En un solo pago anual de $3,588</p>
+                    </div>
+                    <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-circle-check"></i> 2 Usuarios</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 20 Facturas por Mes</li>
+                        <hr>
+                        <li><i class="fa-solid fa-check"></i> Incluye Plan Inicial, Más:</li>
+                        <li><i class="fa-solid fa-check"></i> Gestión de Existencias</li>
+                        <li><i class="fa-solid fa-check"></i> Cortes de Caja</li>
+                        <li><i class="fa-solid fa-check"></i> Fotos de Productos</li>
+                    </ul>
+                </div>
+
+                <!-- Plan Avanzado (Popular) -->
+                <div class="pricing-card popular dynamic-price-card" data-price-monthly="699" data-price-annual="525"
+                    data-annual-total="6,300">
+                    <div class="popular-tag">Más Popular</div>
+                    <div class="card-header">
+                        <h3>Plan Avanzado</h3>
+                        <div class="price">
+                            <span class="old-price">$699</span> <span class="discount-badge">-25%</span>
+                        </div>
+                        <div class="price-main">
+                            <span class="currency">$</span>525 <span class="period">MXN / mes</span>
+                        </div>
+                        <p class="price-subtitle">En un solo pago anual de $6,300</p>
+                    </div>
+                    <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-circle-check"></i> 3 Usuarios y adquiere más</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 50 Facturas por Mes</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Multisucursal</li>
+                        <hr>
+                        <li><i class="fa-solid fa-check"></i> Incluye Plan Esencial, Más:</li>
+                        <li><i class="fa-solid fa-check"></i> Cotizaciones</li>
+                        <li><i class="fa-solid fa-check"></i> Entradas y Salidas</li>
+                        <li><i class="fa-solid fa-check"></i> Gastos</li>
+                    </ul>
+                </div>
+
+                <!-- Plan Pro -->
+                <div class="pricing-card dynamic-price-card" data-price-monthly="999" data-price-annual="749"
+                    data-annual-total="8,988">
+                    <div class="card-header">
+                        <h3>Plan Pro</h3>
+                        <div class="price">
+                            <span class="old-price">$999</span> <span class="discount-badge">-25%</span>
+                        </div>
+                        <div class="price-main">
+                            <span class="currency">$</span>749 <span class="period">MXN / mes</span>
+                        </div>
+                        <p class="price-subtitle">En un solo pago anual de $8,988</p>
+                    </div>
+                    <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-circle-check"></i> 4 Usuarios y adquiere más</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Facturas Ilimitadas</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Multisucursal</li>
+                        <hr>
+                        <li><i class="fa-solid fa-check"></i> Incluye Plan Avanzado, Más:</li>
+                        <li><i class="fa-solid fa-check"></i> Reportes de Finanzas</li>
+                        <li><i class="fa-solid fa-check"></i> Cuentas por Cobrar</li>
+                        <li><i class="fa-solid fa-check"></i> Asignar Vendedores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col brand-col">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration:none;"><img src="assets/logo.jpg"
+                                alt="Gnosis Logo"></a>
+                    </div>
+                    <p>Potencia tu negocio con la plataforma CRM más intuitiva y segura del mercado.</p>
+                </div>
+
+                <!-- Product Links -->
+                <div class="footer-col">
+                    <h4>Producto</h4>
+                    <ul>
+                        <li><a href="index.html#features">Características</a></li>
+                        <li><a href="#" style="color: var(--primary-color);">Precios</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                        <li><a href="#">Actualizaciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social/Contact -->
+                <div class="footer-col">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <p class="copyright-text">&copy; 2026 Gnosis CRM. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

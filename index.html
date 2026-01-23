@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="assets/favicon.jpg">
+    <title>Gnosis CRM - Gestiona tu Negocio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter/Outfit for clean SaaS look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo.jpg" alt="Gnosis Logo">
+            </div>
+            <div class="nav-links">
+                <a href="#features">Funcionalidades</a>
+                <a href="pricing.html">Precios</a>
+                <a href="clients.html">Clientes</a>
+                <a href="resources.html">Recursos</a>
+                <a href="http://localhost:4200" class="btn-login" target="_blank">Inicia Sesión</a>
+                <a href="http://localhost:4200" class="btn-primary" target="_blank">Probar Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">NUEVO: +10,000 Negocios confían en nosotros</span>
+                <h1>El control total de tu negocio, <span class="highlight">en un solo lugar.</span></h1>
+                <p>Gestiona cada aspecto de tu empresa desde una sola plataforma.<br>Simple, potente y siempre
+                    disponible.</p>
+
+                <div class="handwritten-note">
+                    Planes desde <span class="price">$19 mxn/mes</span>
+                    <svg width="40" height="20" viewBox="0 0 50 30" fill="none" class="arrow-icon">
+                        <path d="M10 25 C 20 10, 35 5, 45 10" stroke="#00BFA6" stroke-width="2" fill="none" />
+                        <path d="M45 10 L 40 12 M 45 10 L 42 6" stroke="#00BFA6" stroke-width="2" fill="none" />
+                    </svg>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="http://localhost:4200" class="btn-cta" target="_blank">Probar Gratis</a>
+                </div>
+
+                <div class="reviews">
+                    <div class="stars">★★★★★</div>
+                    <span>4.8 Verificado por <strong>Trustpilot</strong></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Preview (Hero Image) -->
+    <section class="pro-preview">
+        <div class="container">
+            <div class="preview-card">
+                <img src="assets/dashboard.png" alt="Gnosis CRM Dashboard Interface" class="dashboard-img">
+                <!-- Replace with actual screenshot later if user provides one -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof (Logos) -->
+    <section class="social-proof">
+        <div class="container">
+            <p>Empresas que crecen con Gnosis</p>
+            <div class="logo-marquee">
+                <div class="logo-track">
+                    <!-- Set 1 -->
+                    <span>TECHSTART</span>
+                    <span>FINCORP</span>
+                    <span>INNOVATE</span>
+                    <span>NEXUS</span>
+                    <span>GLOBAL</span>
+                    <!-- Set 2 (Duplicate for Loop) -->
+                    <span>TECHSTART</span>
+                    <span>FINCORP</span>
+                    <span>INNOVATE</span>
+                    <span>NEXUS</span>
+                    <span>GLOBAL</span>
+                    <!-- Set 3 (Duplicate for Loop) -->
+                    <span>TECHSTART</span>
+                    <span>FINCORP</span>
+                    <span>INNOVATE</span>
+                    <span>NEXUS</span>
+                    <span>GLOBAL</span>
+                    <!-- Set 4 (Extra buffer) -->
+                    <span>TECHSTART</span>
+                    <span>FINCORP</span>
+                    <span>INNOVATE</span>
+                    <span>NEXUS</span>
+                    <span>GLOBAL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Headline Section -->
+    <section class="dynamic-possibilities">
+        <div class="container split-layout">
+            <div class="static-text">
+                <h2>Una plataforma, infinitas posibilidades</h2>
+            </div>
+            <div class="rotating-text-container">
+                <ul class="rotating-words">
+                    <li class="active">Inventario</li>
+                    <li>Facturación</li>
+                    <li>Tienda en Línea</li>
+                    <li>Campañas</li>
+                    <li>Finanzas</li>
+                    <li>Reportes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature: POS (Punto de Venta) -->
+    <section class="feature-spotlight">
+        <div class="container split-layout reverse-mobile">
+            <!-- Left: Text Content -->
+            <div class="spotlight-content">
+                <span class="badge">Punto de Venta</span>
+                <h2>Agiliza tus ventas y <span class="highlight">elimina las filas</span></h2>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4>Cobro Veloz</h4>
+                            <p>Cierra ventas en segundos con o sin lector de código.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <h4>Ticket Digital</h4>
+                            <p>Ahorra papel enviando tickets por WhatsApp o correo.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-plug"></i></div>
+                        <div>
+                            <h4>Compatibilidad Total</h4>
+                            <p>Conecta cajón, impresora y báscula sin complicaciones.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <h4>Multi-Vendedor</h4>
+                            <p>Cuentas ilimitadas para tus cajeros con permisos personalizados.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="http://localhost:4200" class="btn-cta small-cta" target="_blank">Probar Gratis</a>
+            </div>
+
+            <!-- Right: POS Mockup -->
+            <div class="pos-mockup-container">
+                <div class="pos-card">
+                    <div class="pos-header">
+                        <h4>Nueva Venta</h4>
+                    </div>
+                    <div class="pos-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Busca o escanea productos...</span>
+                        <i class="fa-solid fa-barcode right"></i>
+                    </div>
+
+                    <div class="pos-items">
+                        <!-- Item 1 -->
+                        <div class="pos-item">
+                            <div class="item-thumb" style="background: #e2e8f0;">🎧</div>
+                            <div class="item-details">
+                                <h5>Auriculares F453</h5>
+                                <span class="discount">$200 <span class="tag">25% OFF</span></span>
+                            </div>
+                            <div class="item-action"><i class="fa-solid fa-trash-can"></i></div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="pos-item">
+                            <div class="item-thumb" style="background: #f1f5f9;">🪴</div>
+                            <div class="item-details">
+                                <h5>Maceta Cerámica</h5>
+                                <span>$150</span>
+                            </div>
+                            <div class="item-action"><i class="fa-solid fa-trash-can"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="pos-footer">
+                        <div class="totals">
+                            <span>Total</span>
+                            <span class="amount">$350.00</span>
+                        </div>
+                        <button class="btn-pay">Cobrar $350.00</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature: Inventory (Reversed Layout) -->
+    <section class="feature-spotlight">
+        <div class="container split-layout">
+            <!-- Left: Inventory Mockup -->
+            <!-- Left: Campaigns Image -->
+            <div class="mockup-container">
+                <img src="assets/campaigns_ui.png" alt="Interfaz de Campañas CRM" class="mockup-img">
+            </div>
+
+            <!-- Right: Text Content -->
+            <div class="spotlight-content">
+                <span class="badge"
+                    style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">Campañas</span>
+                <h2>Haz que tus clientes <span class="highlight" style="color: #3b82f6;">regresen una y otra vez</span>
+                </h2>
+
+                <div class="benefits-grid single-col">
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: #8b5cf6;"><i class="fa-solid fa-filter"></i></div>
+                        <div>
+                            <h4>Segmentación Inteligente</h4>
+                            <p>Filtra a tus clientes por qué compraron, hace cuánto o cuánto gastaron.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: #10b981;"><i class="fa-solid fa-paper-plane"></i></div>
+                        <div>
+                            <h4>Envíos Masivos</h4>
+                            <p>Envía promos por WhatsApp o Correo a miles de personas en un clic.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: #f59e0b;"><i class="fa-solid fa-robot"></i></div>
+                        <div>
+                            <h4>Automatización</h4>
+                            <p>Programa felicitaciones de cumpleaños o recordatorios de vencimiento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="http://localhost:4200" class="btn-cta small-cta" target="_blank"
+                    style="background: #3b82f6;">Probar Gratis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature: CRM Pipeline (New) -->
+    <section class="feature-spotlight">
+        <div class="container split-layout reverse-mobile">
+            <!-- Left: Text Content -->
+            <div class="spotlight-content">
+                <span class="badge">Ventas</span>
+                <h2>No dejes que se te escape <span class="highlight">ni una sola venta</span></h2>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-filter-circle-dollar"></i></div>
+                        <div>
+                            <h4>Embudo de Ventas</h4>
+                            <p>Visualiza en qué etapa está cada cliente: Nuevo, Negociación o Cierre.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                        <div>
+                            <h4>Oportunidades</h4>
+                            <p>Detecta quién está listo para comprar y actúa rápido.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-list-check"></i></div>
+                        <div>
+                            <h4>Historial al Detalle</h4>
+                            <p>Registra cada llamada, cita o nota para no olvidar nada.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="http://localhost:4200" class="btn-cta small-cta" target="_blank">Probar Gratis</a>
+            </div>
+
+            <!-- Right: Kanban Mockup -->
+            <!-- Right: CRM Pipeline Image -->
+            <div class="mockup-container">
+                <img src="assets/crm_pipeline_ui.png" alt="Tablero de Oportunidades CRM" class="mockup-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature: Audit & Logs (New) -->
+    <section class="feature-spotlight">
+        <div class="container split-layout">
+            <!-- Left: Audit Image -->
+            <div class="mockup-container">
+                <img src="assets/audit_logs_ui.jpeg" alt="Registro de Actividad y Seguridad" class="mockup-img">
+            </div>
+
+            <!-- Right: Text Content -->
+            <div class="spotlight-content">
+                <span class="badge"
+                    style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Seguridad</span>
+                <h2>Control y <span class="highlight" style="color: #10b981;">Seguridad Total</span></h2>
+
+                <div class="benefits-grid single-col">
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: #f59e0b;"><i class="fa-solid fa-file-shield"></i></div>
+                        <div>
+                            <h4>Historial Inmutable</h4>
+                            <p>Registro permanente de cada acción. Nada se borra sin rastro.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: #3b82f6;"><i class="fa-solid fa-user-secret"></i></div>
+                        <div>
+                            <h4>Detalle Técnico</h4>
+                            <p>Visualiza qué usuario hizo qué cambio, con fecha, hora y ubicación.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: #ef4444;"><i class="fa-solid fa-lock"></i></div>
+                        <div>
+                            <h4>Protección de Datos</h4>
+                            <p>Identifica accesos no autorizados y protege tu información sensible.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="http://localhost:4200" class="btn-cta small-cta" target="_blank">Probar Gratis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header center-text">
+                <h2>Todo lo que necesitas para <span class="highlight">crecer</span></h2>
+                <p>Herramientas potentes diseñadas para simplificar tu operación diaria.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Reportes Visuales</h3>
+                    <p>Entiende tus números de un vistazo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-shop"></i></div>
+                    <h3>Punto de Venta</h3>
+                    <p>Vende rápido y sin errores.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3>Facturación</h3>
+                    <p>Emite facturas en segundos.</p>
+                </div>
+                <!-- New Cards -->
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h3>Control de Inventario</h3>
+                    <p>Gestiona existencias y evita robos hormiga.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                    <h3>Base de Datos</h3>
+                    <p>Conoce a tus clientes y mejora su experiencia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <h3>Acceso en la Nube</h3>
+                    <p>Tu negocio disponible desde cualquier lugar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col brand-col">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration:none;"><img src="assets/logo.jpg"
+                                alt="Gnosis Logo"></a>
+                    </div>
+                    <p>Potencia tu negocio con la plataforma CRM más intuitiva y segura del mercado.</p>
+                </div>
+
+                <!-- Product Links -->
+                <div class="footer-col">
+                    <h4>Producto</h4>
+                    <ul>
+                        <li><a href="#features">Características</a></li>
+                        <li><a href="pricing.html">Precios</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                        <li><a href="#">Actualizaciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social/Contact -->
+                <div class="footer-col">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <p class="copyright-text">&copy; 2026 Gnosis CRM. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
