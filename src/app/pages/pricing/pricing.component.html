@@ -1,0 +1,146 @@
+<!-- Pricing Page Header -->
+<header class="pricing-header" style="padding-top: 120px; padding-bottom: 40px; text-align: center;">
+    <div class="container">
+        <h1>Elije el plan perfecto para tu negocio</h1>
+        <p style="color: var(--light-text); margin-top: 10px;">Sin contratos forzosos. Cancela cuando quieras.</p>
+    </div>
+</header>
+
+<!-- Pricing Section -->
+<section id="pricing" class="pricing">
+    <div class="container">
+        <div class="section-header center-text">
+            <h2>La solución más completa, <span class="highlight">al mejor precio</span></h2>
+            <div class="pricing-badges">
+                <span class="badgex"><i class="fa-solid fa-check"></i> Prueba gratis por 14 días</span>
+                <span class="badgex"><i class="fa-solid fa-check"></i> Los precios tienen IVA incluido</span>
+                <span class="badgex"><i class="fa-solid fa-check"></i> Soporte Incluido</span>
+            </div>
+        </div>
+
+        <!-- Billing Toggle -->
+        <div class="billing-toggle">
+            <span>Pago Mensual</span>
+            <div class="toggle-switch">
+                <input type="checkbox" id="billingSwitch" [checked]="isAnnual()" (change)="toggleBilling($event)">
+                <label for="billingSwitch"></label>
+            </div>
+            <span>Pago Anual <span class="discount-tag">-25%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Plan Inicial -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3>Plan Inicial</h3>
+                    <div class="tags">
+                        <span class="tag-blue">Sólo Pago Mensual</span>
+                        <span class="tag-gray">Sin Promoción</span>
+                    </div>
+                    <div class="price-main">
+                        <span class="currency">$</span>49 <span class="period">MXN / mes</span>
+                    </div>
+                    <p class="price-subtitle">Sólo disponible en pago mensual</p>
+                </div>
+                <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> 1 Usuario</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 3 Facturas por Mes</li>
+                    <hr>
+                    <li><i class="fa-solid fa-check"></i> Punto de Venta</li>
+                    <li><i class="fa-solid fa-check"></i> Clientes</li>
+                    <li><i class="fa-solid fa-check"></i> Impresión de Tickets</li>
+                    <li><i class="fa-solid fa-check"></i> Recargas y Servicios</li>
+                </ul>
+            </div>
+
+            <!-- Plan Esencial -->
+            <div class="pricing-card dynamic-price-card">
+                <div class="card-header">
+                    <h3>Plan Esencial</h3>
+                    <div class="price">
+                        <span class="old-price" *ngIf="isAnnual()">$399</span>
+                        <span class="discount-badge" *ngIf="isAnnual()">-25%</span>
+                    </div>
+                    <div class="price-main">
+                        <span class="currency">$</span>{{ isAnnual() ? '299' : '399' }} <span class="period">MXN /
+                            mes</span>
+                    </div>
+                    <p class="price-subtitle">{{ isAnnual() ? 'En un solo pago anual de $3,588' : 'Pago mensual
+                        recurrente' }}</p>
+                </div>
+                <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> 2 Usuarios</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 20 Facturas por Mes</li>
+                    <hr>
+                    <li><i class="fa-solid fa-check"></i> Incluye Plan Inicial, Más:</li>
+                    <li><i class="fa-solid fa-check"></i> Gestión de Existencias</li>
+                    <li><i class="fa-solid fa-check"></i> Cortes de Caja</li>
+                    <li><i class="fa-solid fa-check"></i> Fotos de Productos</li>
+                </ul>
+            </div>
+
+            <!-- Plan Avanzado (Popular) -->
+            <div class="pricing-card popular dynamic-price-card">
+                <div class="popular-tag">Más Popular</div>
+                <div class="card-header">
+                    <h3>Plan Avanzado</h3>
+                    <div class="price">
+                        <span class="old-price" *ngIf="isAnnual()">$699</span>
+                        <span class="discount-badge" *ngIf="isAnnual()">-25%</span>
+                    </div>
+                    <div class="price-main">
+                        <span class="currency">$</span>{{ isAnnual() ? '525' : '699' }} <span class="period">MXN /
+                            mes</span>
+                    </div>
+                    <p class="price-subtitle">{{ isAnnual() ? 'En un solo pago anual de $6,300' : 'Pago mensual
+                        recurrente' }}</p>
+                </div>
+                <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> 3 Usuarios y adquiere más</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 50 Facturas por Mes</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Multisucursal</li>
+                    <hr>
+                    <li><i class="fa-solid fa-check"></i> Incluye Plan Esencial, Más:</li>
+                    <li><i class="fa-solid fa-check"></i> Cotizaciones</li>
+                    <li><i class="fa-solid fa-check"></i> Entradas y Salidas</li>
+                    <li><i class="fa-solid fa-check"></i> Gastos</li>
+                </ul>
+            </div>
+
+            <!-- Plan Pro -->
+            <div class="pricing-card dynamic-price-card">
+                <div class="card-header">
+                    <h3>Plan Pro</h3>
+                    <div class="price">
+                        <span class="old-price" *ngIf="isAnnual()">$999</span>
+                        <span class="discount-badge" *ngIf="isAnnual()">-25%</span>
+                    </div>
+                    <div class="price-main">
+                        <span class="currency">$</span>{{ isAnnual() ? '749' : '999' }} <span class="period">MXN /
+                            mes</span>
+                    </div>
+                    <p class="price-subtitle">{{ isAnnual() ? 'En un solo pago anual de $8,988' : 'Pago mensual
+                        recurrente' }}</p>
+                </div>
+                <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> 4 Usuarios y adquiere más</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Facturas Ilimitadas</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Multisucursal</li>
+                    <hr>
+                    <li><i class="fa-solid fa-check"></i> Incluye Plan Avanzado, Más:</li>
+                    <li><i class="fa-solid fa-check"></i> Reportes de Finanzas</li>
+                    <li><i class="fa-solid fa-check"></i> Cuentas por Cobrar</li>
+                    <li><i class="fa-solid fa-check"></i> Asignar Vendedores</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
