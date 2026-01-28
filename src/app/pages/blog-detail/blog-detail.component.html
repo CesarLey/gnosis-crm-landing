@@ -1,0 +1,51 @@
+<div *ngIf="article" class="blog-post-page">
+    <header class="blog-post-header">
+        <div class="container">
+            <span class="blog-tag">{{ article.tag }}</span>
+            <h1>{{ article.title }}</h1>
+            <div class="blog-meta">
+                <span>Por {{ article.author }}</span> • <span>Lectura de {{ article.readTime }}</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="blog-post-content">
+        <div class="container">
+            <div class="main-image">
+                <img [src]="article.image" [alt]="article.title">
+            </div>
+
+            <div class="text-content">
+                <p class="lead">{{ article.content }}</p>
+
+                <div *ngIf="article.highlights" class="highlights-box">
+                    <h3>Puntos Clave:</h3>
+                    <ul>
+                        <li *ngFor="let point of article.highlights">
+                            <i class="fa-solid fa-check"></i> {{ point }}
+                        </li>
+                    </ul>
+                </div>
+
+                <blockquote *ngIf="article.quote">
+                    "{{ article.quote }}"
+                </blockquote>
+
+                <p>Implementar estas estrategias con <strong>Gnosis CRM</strong> te permitirá no solo gestionar mejor a
+                    tus clientes, sino construir relaciones duraderas que se traducen en un crecimiento sostenido para
+                    tu negocio.</p>
+            </div>
+
+            <div class="blog-post-footer">
+                <a routerLink="/blog" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Blog</a>
+            </div>
+        </div>
+    </article>
+</div>
+
+<div *ngIf="!article" class="container" style="padding: 100px 20px; text-align: center;">
+    <h1>Artículo no encontrado</h1>
+    <p>Lo sentimos, el artículo que buscas no existe o ha sido movido.</p>
+    <a routerLink="/blog" class="btn-primary"
+        style="margin-top: 20px; display: inline-block; text-decoration: none;">Volver al Blog</a>
+</div>

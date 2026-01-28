@@ -1,62 +1,85 @@
-<!-- Header -->
-<!-- Hero Section -->
+<!-- Resources Hero -->
 <header class="resources-hero">
     <div class="container">
-        <span class="blog-tag" style="margin-bottom: 20px; display: inline-block;">Centro de Conocimiento</span>
+        <span class="blog-tag" style="margin-bottom: 20px; display: inline-block;">Knowledge Hub</span>
         <h1>Todo lo que necesitas para crecer</h1>
-        <p>Explora nuestras videoguías, artículos detallados y documentación técnica para dominar Gnosis CRM.</p>
+        <p>Explora nuestras videoguías, artículos detallados y documentación técnica diseñada para potenciar tu éxito
+            con Gnosis CRM.</p>
     </div>
 </header>
 
-<!-- Resources Menu -->
-<section class="resources-section">
+<section class="resources-content">
     <div class="container">
+        <!-- Featured Spotlight -->
+        <div class="featured-resource">
+            <div class="featured-card">
+                <div class="featured-bg" style="background-image: url('/images/resources/featured_bg.png');"></div>
+                <div class="featured-content">
+                    <span class="badge">Nuevo Recurso</span>
+                    <h2>Guía Maestra: Domina Gnosis CRM en 15 Minutos</h2>
+                    <p>Aprende desde la configuración básica hasta las automatizaciones más potentes que duplicarán la
+                        eficiencia de tu equipo.</p>
+                    <a routerLink="/videos" class="btn-primary">Ver Guía Ahora <i class="fa-solid fa-play"
+                            style="margin-left: 10px;"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Resources Grid -->
         <div class="resources-grid">
             <!-- Videos -->
-            <a routerLink="/videos" class="resource-card video-card-resource">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-play"></i>
-                </div>
-                <div class="resource-content">
+            <a routerLink="/videos" class="resource-card">
+                <div class="card-bg" style="background-image: url('/images/resources/videos_bg.png');"></div>
+                <div class="card-overlay"></div>
+                <div class="content-box">
+                    <div class="resource-icon">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
                     <h3>Videotutoriales</h3>
-                    <p>Aprende paso a paso con nuestras guías visuales rápidas y prácticas.</p>
-                    <span class="link-text">Ver Videos <i class="fa-solid fa-arrow-right"></i></span>
+                    <p>Aprende paso a paso con nuestras guías visuales rápidas y prácticas diseñadas para tu equipo.</p>
+                    <div class="link-action">Explorar Videos <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </a>
 
             <!-- Blog -->
-            <a routerLink="/blog" class="resource-card blog-card-resource">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-newspaper"></i>
-                </div>
-                <div class="resource-content">
+            <a routerLink="/blog" class="resource-card">
+                <div class="card-bg" style="background-image: url('/images/resources/blog_bg.png');"></div>
+                <div class="card-overlay"></div>
+                <div class="content-box">
+                    <div class="resource-icon">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
                     <h3>Blog Gnosis</h3>
-                    <p>Estrategias de venta, tips de gestión y novedades del sector.</p>
-                    <span class="link-text">Leer Artículos <i class="fa-solid fa-arrow-right"></i></span>
+                    <p>Estrategias de venta, tips de gestión empresarial y todas las novedades del sector.</p>
+                    <div class="link-action">Leer Artículos <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </a>
 
             <!-- Centro de Ayuda -->
-            <a routerLink="/help" class="resource-card help-card-resource">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-life-ring"></i>
-                </div>
-                <div class="resource-content">
+            <a routerLink="/help" class="resource-card">
+                <div class="card-bg" style="background-image: url('/images/help/reports.png');"></div>
+                <div class="card-overlay"></div>
+                <div class="content-box">
+                    <div class="resource-icon">
+                        <i class="fa-solid fa-life-ring"></i>
+                    </div>
                     <h3>Centro de Ayuda</h3>
-                    <p>Documentación técnica y respuestas a preguntas frecuentes.</p>
-                    <span class="link-text">Visitar Centro <i class="fa-solid fa-arrow-right"></i></span>
+                    <p>Documentación técnica detallada y respuestas instantáneas a tus preguntas frecuentes.</p>
+                    <div class="link-action">Visitar Centro <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </a>
 
-            <!-- Contáctanos -->
-            <a routerLink="/contact" class="resource-card contact-card-resource">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-                <div class="resource-content">
+            <!-- Soporte -->
+            <a routerLink="/contact" class="resource-card">
+                <div class="card-bg" style="background-image: url('/images/resources/support_bg.png');"></div>
+                <div class="card-overlay"></div>
+                <div class="content-box">
+                    <div class="resource-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
                     <h3>Soporte Directo</h3>
-                    <p>¿No encuentras lo que buscas? Habla con nuestro equipo.</p>
-                    <span class="link-text">Contactar Soporte <i class="fa-solid fa-arrow-right"></i></span>
+                    <p>¿Tienes dudas específicas? Nuestro equipo de expertos está listo para ayudarte personalmente.</p>
+                    <div class="link-action">Hablar con Soporte <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </a>
         </div>

@@ -3,299 +3,46 @@
     <div class="container">
         <span class="blog-tag" style="margin-bottom: 20px; display: inline-block;">Soporte Gnosis</span>
         <h1>Hola, ¿en qué podemos ayudarte?</h1>
-        <p style="margin-bottom: 40px;">Encuentra respuestas rápidas, guías paso a paso y soluciones a tus dudas.
-        </p>
-        <div class="help-search-box">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" class="help-search-input" placeholder="Buscar guías, tutoriales o problemas...">
-        </div>
+        <p>Encuentra respuestas rápidas, guías paso a paso y soluciones a tus dudas.</p>
     </div>
 </div>
 
 <section class="help-content" style="padding: 60px 0; background: var(--bg-color);">
     <div class="container">
-        <!-- Help Categories -->
+        <!-- Help Categories Grid -->
         <div class="resources-grid">
-            <!-- Card 1 -->
-            <div class="resource-card help-category-card" [class.active]="activeCategory === 0"
-                (click)="toggleCategory(0)">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-rocket"></i>
+            <a *ngFor="let cat of categories" class="help-category-card" (click)="navigateToArticle(cat.id)"
+                [routerLink]="['/help', cat.id]" href="javascript:void(0)"
+                style="text-decoration: none; display: block;">
+                <div class="card-bg" [style.backgroundImage]="'url(' + cat.image + ')'"></div>
+                <div class="card-overlay"></div>
+                <div class="category-main-content">
+                    <div class="category-icon">
+                        <i [class]="cat.icon"></i>
+                    </div>
+                    <h3>{{ cat.title }}</h3>
+                    <p>{{ cat.description }}</p>
                 </div>
-                <div class="resource-content">
-                    <h3>Comenzando</h3>
-                    <p>Configuración inicial, primeros pasos y personalización básica.</p>
-                </div>
-                <div class="card-details">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <strong>Crear mi cuenta</strong>
-                                <span>Regístrate con tu correo y configura tu perfil de administrador.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Instalar la App Desktop</strong>
-                                <span>Descarga e instala Gnosis en Windows o Mac para mejor rendimiento.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Importar productos (Excel)</strong>
-                                <span>Carga tu inventario masivamente usando nuestra plantilla CSV.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Configurar impresora</strong>
-                                <span>Conecta tu impresora térmica para tickets y etiquetas.</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="resource-card help-category-card" [class.active]="activeCategory === 1"
-                (click)="toggleCategory(1)">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-cash-register"></i>
-                </div>
-                <div class="resource-content">
-                    <h3>Ventas y Caja</h3>
-                    <p>Cómo registrar ventas, hacer cortes de caja y devoluciones.</p>
-                </div>
-                <div class="card-details">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <strong>Registrar nueva venta</strong>
-                                <span>Escanea productos, selecciona cliente y procesa el pago.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Realizar corte de caja</strong>
-                                <span>Cierra el turno, cuenta el efectivo y genera el reporte del día.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Aplicar descuentos</strong>
-                                <span>Configura promociones automáticas o descuentos manuales.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Gestionar devoluciones</strong>
-                                <span>Procesa reembolsos y reingresa productos al stock.</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="resource-card help-category-card" [class.active]="activeCategory === 2"
-                (click)="toggleCategory(2)">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-boxes-stacked"></i>
-                </div>
-                <div class="resource-content">
-                    <h3>Inventario</h3>
-                    <p>Gestión de productos, stock, proveedores y almacenes.</p>
-                </div>
-                <div class="card-details">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <strong>Agregar productos</strong>
-                                <span>Crea fichas de producto con precio, costo, imágenes y códigos.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Ajustes de stock</strong>
-                                <span>Registra entradas por compra, salidas por merma o uso interno.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Gestionar proveedores</strong>
-                                <span>Administra tu lista de proveedores y órdenes de compra.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Transferencias entre almacenes</strong>
-                                <span>Mueve mercancía entre sucursales o bodegas fácilmente.</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="resource-card help-category-card" [class.active]="activeCategory === 3"
-                (click)="toggleCategory(3)">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-chart-pie"></i>
-                </div>
-                <div class="resource-content">
-                    <h3>Reportes</h3>
-                    <p>Entiende tus métricas, exporta datos y analiza tu crecimiento.</p>
-                </div>
-                <div class="card-details">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <strong>Reporte de ventas diarias</strong>
-                                <span>Visualiza ingresos por hora, método de pago y vendedor.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Productos más vendidos</strong>
-                                <span>Identifica tus estrellas y optimiza tu mix de productos.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Exportar a Excel/PDF</strong>
-                                <span>Descarga cualquier tabla de datos para análisis externo.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Análisis de ganancias</strong>
-                                <span>Calcula utilidad bruta y neta descontando costos operativos.</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="resource-card help-category-card" [class.active]="activeCategory === 4"
-                (click)="toggleCategory(4)">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-regular fa-credit-card"></i>
-                </div>
-                <div class="resource-content">
-                    <h3>Cuenta y Pagos</h3>
-                    <p>Gestión de suscripción, facturación y detalles de la cuenta.</p>
-                </div>
-                <div class="card-details">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <strong>Cambiar plan de suscripción</strong>
-                                <span>Mejora tu plan o cambia la frecuencia de facturación.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Descargar facturas</strong>
-                                <span>Obtén los comprobantes fiscales de tus pagos a Gnosis.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Actualizar método de pago</strong>
-                                <span>Cambia tu tarjeta de crédito o datos de facturación.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Administrar usuarios</strong>
-                                <span>Agrega cajas o vendedores y define sus permisos.</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="resource-card help-category-card" [class.active]="activeCategory === 5"
-                (click)="toggleCategory(5)">
-                <div class="resource-icon-wrapper">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                </div>
-                <div class="resource-content">
-                    <h3>Solución de Problemas</h3>
-                    <p>Resolución de errores comunes y herramientas de diagnóstico.</p>
-                </div>
-                <div class="card-details">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <strong>Error de conexión</strong>
-                                <span>Pasos para diagnosticar y restablecer la conexión al servidor.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Problemas con la impresora</strong>
-                                <span>Guía para calibrar y reconectar impresoras térmicas.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Restablecer contraseña</strong>
-                                <span>Recupera el acceso a tu cuenta si olvidaste tus credenciales.</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <strong>Contactar soporte técnico</strong>
-                                <span>Abre un ticket de ayuda o chatea con un agente en vivo.</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            </a>
         </div>
 
-        <!-- Simple FAQ Section -->
+        <!-- FAQ Section -->
         <div class="faq-section" style="margin-top: 100px;">
             <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem;">Preguntas Frecuentes</h2>
 
-            <div class="faq-item" [class.active]="activeFaq === 0" (click)="toggleFaq(0)">
+            <div *ngFor="let faq of faqs; let i = index" class="faq-item" [class.active]="activeFaq === i"
+                (click)="toggleFaq(i)">
                 <div class="faq-question">
-                    <span>¿Cómo puedo restablecer mi contraseña?</span>
+                    <span>{{ faq.q }}</span>
                     <i class="fa-solid fa-plus faq-icon"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Ve a la pantalla de inicio de sesión y selecciona "¿Olvidaste tu contraseña?". Recibirás un
-                        correo electrónico con un enlace seguro para crear una nueva.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" [class.active]="activeFaq === 1" (click)="toggleFaq(1)">
-                <div class="faq-question">
-                    <span>¿Puedo usar Gnosis CRM sin conexión a internet?</span>
-                    <i class="fa-solid fa-plus faq-icon"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Sí, la versión de escritorio permite realizar ventas básicas en modo offline. Los datos se
-                        sincronizarán automáticamente cuando recuperes la conexión.</p>
-                </div>
-            </div>
-
-            <div class="faq-item" [class.active]="activeFaq === 2" (click)="toggleFaq(2)">
-                <div class="faq-question">
-                    <span>¿Cómo exporto mis reportes a Excel?</span>
-                    <i class="fa-solid fa-plus faq-icon"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>En la sección de "Reportes", selecciona el rango de fechas deseado y haz clic en el botón
-                        "Exportar" situado en la esquina superior derecha de la tabla.</p>
+                    <p>{{ faq.a }}</p>
                 </div>
             </div>
         </div>
 
-        <div style="text-align: center;">
+        <div style="text-align: center; margin-top: 60px;">
             <a routerLink="/resources"
                 style="color: var(--primary-color); text-decoration: none; font-weight: 500;">&larr; Volver a
                 Recursos</a>

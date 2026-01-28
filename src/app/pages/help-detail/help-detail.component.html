@@ -1,0 +1,53 @@
+<header [class]="'help-article-hero ' + articleId" [style.backgroundImage]="'url(' + article?.image + ')'">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content" *ngIf="article">
+            <span class="category-tag">Guía Oficial Gnosis</span>
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.description }}</p>
+        </div>
+    </div>
+</header>
+
+<section class="article-content-section">
+    <div class="container">
+        <div class="article-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="article-sidebar">
+                <div class="sidebar-box">
+                    <h3>En esta sección</h3>
+                    <ul>
+                        <li *ngFor="let link of article?.links">
+                            <a href="javascript:void(0)">{{ link.title }}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a routerLink="/help" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i> Volver a Ayuda
+                </a>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="article-main">
+                <div class="article-card-details" *ngIf="article">
+                    <div class="article-step" *ngFor="let link of article.links">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="step-text">
+                            <h3>{{ link.title }}</h3>
+                            <p>{{ link.desc }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-footer-cta">
+                    <h3>¿Todavía tienes dudas?</h3>
+                    <p>Nuestro equipo de soporte está disponible 24/7 para ayudarte con cualquier problema técnico.</p>
+                    <a routerLink="/contact" class="btn-primary">Contactar Soporte</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

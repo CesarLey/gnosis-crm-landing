@@ -7,6 +7,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { VideosComponent } from './pages/videos/videos.component';
 import { HelpComponent } from './pages/help/help.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
+import { HelpDetailComponent } from './pages/help-detail/help-detail.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -16,6 +18,8 @@ export const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'videos', component: VideosComponent },
     { path: 'help', component: HelpComponent },
+    { path: 'help/:id', component: HelpDetailComponent },
     { path: 'blog', component: BlogComponent },
+    { path: 'blog/:id', component: BlogDetailComponent },
     { path: '**', redirectTo: '' }
 ];

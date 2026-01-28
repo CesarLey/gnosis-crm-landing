@@ -34,36 +34,28 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
 
     private initAnimations(): void {
-        const cards = this.el.nativeElement.querySelectorAll('.feature-card');
-        const heroText = this.el.nativeElement.querySelector('.hero-text');
+        const reveals = this.el.nativeElement.querySelectorAll('.reveal');
 
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    (entry.target as HTMLElement).style.opacity = '1';
-                    (entry.target as HTMLElement).style.transform = 'translateY(0)';
+                    (entry.target as HTMLElement).classList.add('active');
                 }
             });
         }, {
-            threshold: 0.1
+            threshold: 0.05 // Reduced threshold for better reliability
         });
 
-        cards.forEach((card: HTMLElement, index: number) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `all 0.6s ease-out ${index * 0.2}s`;
-            this.observer?.observe(card);
+        reveals.forEach((el: HTMLElement) => {
+            this.observer?.observe(el);
         });
 
-        if (heroText) {
-            heroText.style.opacity = '0';
-            heroText.style.transform = 'translateY(30px)';
-            setTimeout(() => {
-                heroText.style.transition = 'all 1s ease-out';
-                heroText.style.opacity = '1';
-                heroText.style.transform = 'translateY(0)';
-            }, 100);
-        }
+        // Fallback: Show everything if something went wrong or user is at the bottom
+        setTimeout(() => {
+            reveals.forEach((el: HTMLElement) => {
+                el.classList.add('active');
+            });
+        }, 3000);
     }
 
     private initRotatingWords(): void {
