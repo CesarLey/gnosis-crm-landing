@@ -29,36 +29,31 @@
         </div>
 
         <div class="pricing-grid">
-            <!-- Plan Inicial -->
+            <!-- Plan Free -->
             <div class="pricing-card">
                 <div class="card-header">
-                    <h3>Plan Inicial</h3>
+                    <h3>Plan Free</h3>
                     <div class="tags">
-                        <span class="tag-blue">Sólo Pago Mensual</span>
-                        <span class="tag-gray">Sin Promoción</span>
+                        <!-- <span class="tag-blue">Para empezar</span> -->
                     </div>
                     <div class="price-main">
-                        <span class="currency">$</span>49 <span class="period">MXN / mes</span>
+                        <span class="currency">$</span>0 <span class="period">MXN / mes</span>
                     </div>
-                    <p class="price-subtitle">Sólo disponible en pago mensual</p>
+                    <p class="price-subtitle">Para empezar.</p>
                 </div>
                 <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-circle-check"></i> 1 Usuario</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
-                    <li><i class="fa-solid fa-circle-check"></i> 3 Facturas por Mes</li>
-                    <hr>
-                    <li><i class="fa-solid fa-check"></i> Punto de Venta</li>
-                    <li><i class="fa-solid fa-check"></i> Clientes</li>
-                    <li><i class="fa-solid fa-check"></i> Impresión de Tickets</li>
-                    <li><i class="fa-solid fa-check"></i> Recargas y Servicios</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 50 Clientes</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Agenda básica y CRM esencial</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Ideal para validar tu idea</li>
                 </ul>
             </div>
 
-            <!-- Plan Esencial -->
+            <!-- Plan Básico -->
             <div class="pricing-card dynamic-price-card">
                 <div class="card-header">
-                    <h3>Plan Esencial</h3>
+                    <h3>Plan Básico</h3>
                     <div class="price">
                         <span class="old-price" *ngIf="isAnnual()">$399</span>
                         <span class="discount-badge" *ngIf="isAnnual()">-25%</span>
@@ -72,49 +67,17 @@
                 </div>
                 <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-circle-check"></i> 2 Usuarios</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
-                    <li><i class="fa-solid fa-circle-check"></i> 20 Facturas por Mes</li>
-                    <hr>
-                    <li><i class="fa-solid fa-check"></i> Incluye Plan Inicial, Más:</li>
-                    <li><i class="fa-solid fa-check"></i> Gestión de Existencias</li>
-                    <li><i class="fa-solid fa-check"></i> Cortes de Caja</li>
-                    <li><i class="fa-solid fa-check"></i> Fotos de Productos</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 5 Usuarios</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 1000 Clientes</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Reportes de Ventas (Funnel y Pérdidas)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Gestión de Pedidos e Inventario</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Plantillas de Respuesta Rápida</li>
                 </ul>
             </div>
 
-            <!-- Plan Avanzado (Popular) -->
+            <!-- Plan Pro (Recomendado) -->
             <div class="pricing-card popular dynamic-price-card">
-                <div class="popular-tag">Más Popular</div>
-                <div class="card-header">
-                    <h3>Plan Avanzado</h3>
-                    <div class="price">
-                        <span class="old-price" *ngIf="isAnnual()">$699</span>
-                        <span class="discount-badge" *ngIf="isAnnual()">-25%</span>
-                    </div>
-                    <div class="price-main">
-                        <span class="currency">$</span>{{ isAnnual() ? '525' : '699' }} <span class="period">MXN /
-                            mes</span>
-                    </div>
-                    <p class="price-subtitle">{{ isAnnual() ? 'En un solo pago anual de $6,300' : 'Pago mensual
-                        recurrente' }}</p>
-                </div>
-                <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
-                <ul class="features-list">
-                    <li><i class="fa-solid fa-circle-check"></i> 3 Usuarios y adquiere más</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
-                    <li><i class="fa-solid fa-circle-check"></i> 50 Facturas por Mes</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Multisucursal</li>
-                    <hr>
-                    <li><i class="fa-solid fa-check"></i> Incluye Plan Esencial, Más:</li>
-                    <li><i class="fa-solid fa-check"></i> Cotizaciones</li>
-                    <li><i class="fa-solid fa-check"></i> Entradas y Salidas</li>
-                    <li><i class="fa-solid fa-check"></i> Gastos</li>
-                </ul>
-            </div>
-
-            <!-- Plan Pro -->
-            <div class="pricing-card dynamic-price-card">
+                <div class="popular-tag">¡Recomendado!</div>
                 <div class="card-header">
                     <h3>Plan Pro</h3>
                     <div class="price">
@@ -130,15 +93,33 @@
                 </div>
                 <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Probar Gratis</a>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-circle-check"></i> 4 Usuarios y adquiere más</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Productos y Ventas ilimitados</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Facturas Ilimitadas</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Multisucursal</li>
-                    <hr>
-                    <li><i class="fa-solid fa-check"></i> Incluye Plan Avanzado, Más:</li>
-                    <li><i class="fa-solid fa-check"></i> Reportes de Finanzas</li>
-                    <li><i class="fa-solid fa-check"></i> Cuentas por Cobrar</li>
-                    <li><i class="fa-solid fa-check"></i> Asignar Vendedores</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Usuarios Ilimitados</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Conexión API Meta (WhatsApp/FB/IG)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Workflows de Automatización</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Campañas Masivas</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Tracking de Clientes (Pixel)</li>
+                </ul>
+            </div>
+
+            <!-- Plan Enterprise -->
+            <div class="pricing-card dynamic-price-card">
+                <div class="card-header">
+                    <h3>Plan Enterprise</h3>
+                    <!-- <div class="price">
+                         No discount badge needed for custom pricing usually, or keep structure hidden
+                    </div> -->
+                    <div class="price-main" style="margin-top: 2rem;">
+                        <span class="currency"></span>A medida<span class="period"></span>
+                    </div>
+                    <p class="price-subtitle">Contáctanos para una solución personalizada</p>
+                </div>
+                <a href="http://localhost:4200" class="btn-primary full-width" target="_blank">Contactar Ventas</a>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Todo lo del Plan Pro</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Servidor e Instancia Dedicada</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Soporte 24/7 Prioritario</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Integraciones personalizadas</li>
+                    <li><i class="fa-solid fa-circle-check"></i> SLA Garantizado</li>
                 </ul>
             </div>
         </div>
