@@ -1,0 +1,100 @@
+<div class="register-container">
+    <!-- Left Side - Form -->
+    <div class="register-form-section">
+        <div class="register-header">
+            <a routerLink="/" class="logo-link">
+                <img src="assets/logo.jpg" alt="Gnosis Logo" class="register-logo">
+                <span class="logo-text">Gnosis CRM</span>
+            </a>
+        </div>
+
+        <div class="form-wrapper">
+            <div class="trial-badge">
+                <i class="fa-regular fa-clock"></i> Prueba gratis por 14 días
+            </div>
+            <h1>Ingresa tus datos para comenzar</h1>
+            <p class="login-prompt">¿Ya estás registrado? <a routerLink="/login">Ingresa</a> a tu cuenta</p>
+
+            <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="registerData.email"
+                        placeholder="Ingresa tu email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Teléfono de WhatsApp</label>
+                    <div class="phone-input-group">
+                        <div class="country-select-container">
+                            <div class="country-select" (click)="toggleCountryDropdown()">
+                                <img [src]="selectedCountry.flag" [alt]="selectedCountry.name" width="20">
+                                <span>{{ selectedCountry.code }}</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+
+                            <!-- Dropdown Menu -->
+                            <div class="country-dropdown" *ngIf="showCountryDropdown">
+                                <div class="country-option" *ngFor="let country of countries"
+                                    (click)="selectCountry(country)">
+                                    <img [src]="country.flag" [alt]="country.name" width="20">
+                                    <span class="country-name">{{ country.name }}</span>
+                                    <span class="country-code">{{ country.code }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="tel" id="phone" name="phone" [(ngModel)]="registerData.phone"
+                            placeholder="Ingresa tu teléfono" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="registerData.password"
+                        placeholder="Define tu contraseña" required>
+                </div>
+
+                <button type="submit" class="btn-register-submit">¡Comenzar Demo!</button>
+
+                <p class="disclaimer">No necesitas tarjeta de crédito para comenzar</p>
+            </form>
+        </div>
+
+        <div class="form-footer">
+            <p>&copy; 2026 Gnosis CRM. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <!-- Right Side - Benefits -->
+    <div class="register-visual-section">
+        <div class="benefits-container">
+            <div class="logo-visual">
+                <img src="assets/logo.jpg" alt="Gnosis Logo Small" class="visual-logo-img">
+                <span class="visual-logo-text">Gnosis CRM</span>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h3>Cargamos tu inventario gratis</h3>
+                <p>Nuestro equipo te ayudará a que tengas todo listo</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <h3>A partir de $19 MXN por mes</h3>
+                <p>Un precio claro y simple</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                </div>
+                <h3>Flexible</h3>
+                <p>Puedes usarlo en cualquier dispositivo</p>
+            </div>
+        </div>
+    </div>
+</div>
