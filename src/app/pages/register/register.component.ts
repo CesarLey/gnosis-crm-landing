@@ -31,7 +31,11 @@ export class RegisterComponent {
         { name: 'Chile', code: '+56', flag: 'https://flagcdn.com/w20/cl.png' },
         { name: 'Perú', code: '+51', flag: 'https://flagcdn.com/w20/pe.png' },
         { name: 'España', code: '+34', flag: 'https://flagcdn.com/w20/es.png' },
-        { name: 'Ecuador', code: '+593', flag: 'https://flagcdn.com/w20/ec.png' }
+        { name: 'Ecuador', code: '+593', flag: 'https://flagcdn.com/w20/ec.png' },
+        { name: 'Brasil', code: '+55', flag: 'https://flagcdn.com/w20/br.png' },
+        { name: 'Canadá', code: '+1', flag: 'https://flagcdn.com/w20/ca.png' },
+        { name: 'Reino Unido', code: '+44', flag: 'https://flagcdn.com/w20/gb.png' },
+        { name: 'Costa Rica', code: '+506', flag: 'https://flagcdn.com/w20/cr.png' }
     ];
 
     selectedCountry: Country = this.countries[0];

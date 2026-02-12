@@ -39,6 +39,7 @@
                                     <img [src]="country.flag" [alt]="country.name" width="20">
                                     <span class="country-name">{{ country.name }}</span>
                                     <span class="country-code">{{ country.code }}</span>
+                                    <i class="fa-solid fa-check check-icon" *ngIf="selectedCountry === country"></i>
                                 </div>
                             </div>
                         </div>
@@ -72,28 +73,28 @@
                 <span class="visual-logo-text">Gnosis CRM</span>
             </div>
 
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fa-solid fa-clipboard-list"></i>
+            <div class="benefit-card glass-effect">
+                <div class="benefit-icon icon-gradient-blue">
+                    <i class="fa-solid fa-chart-line"></i>
                 </div>
-                <h3>Cargamos tu inventario gratis</h3>
-                <p>Nuestro equipo te ayudará a que tengas todo listo</p>
+                <h3>Impulsa tus Ventas</h3>
+                <p>Gestiona leads y cierra tratos más rápido con nuestro CRM intuitivo.</p>
             </div>
 
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fa-solid fa-dollar-sign"></i>
+            <div class="benefit-card glass-effect">
+                <div class="benefit-icon icon-gradient-purple">
+                    <i class="fa-solid fa-boxes-stacked"></i>
                 </div>
-                <h3>A partir de $19 MXN por mes</h3>
-                <p>Un precio claro y simple</p>
+                <h3>Control Total de Inventario</h3>
+                <p>Mantén tu stock sincronizado y organizado en tiempo real.</p>
             </div>
 
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fa-regular fa-thumbs-up"></i>
+            <div class="benefit-card glass-effect">
+                <div class="benefit-icon icon-gradient-green">
+                    <i class="fa-solid fa-headset"></i>
                 </div>
-                <h3>Flexible</h3>
-                <p>Puedes usarlo en cualquier dispositivo</p>
+                <h3>Soporte Premium</h3>
+                <p>Equipo dedicado para ayudarte a configurar y escalar tu negocio.</p>
             </div>
         </div>
     </div>
