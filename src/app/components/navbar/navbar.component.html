@@ -8,8 +8,79 @@
             <a routerLink="/pricing" routerLinkActive="active">Precios</a>
             <a routerLink="/clients" routerLinkActive="active">Clientes</a>
             <a routerLink="/resources" routerLinkActive="active">Recursos</a>
-            <a routerLink="/login" class="btn-login">Ingresar</a>
-            <a routerLink="/register" class="btn-primary">Probar Gratis</a>
+
+            <!-- Vista No Logueado -->
+            <ng-container *ngIf="!isLoggedIn">
+                <button (click)="openLoginModal()" class="btn-login">Ingresar</button>
+                <a routerLink="/register" class="btn-primary">Probar Gratis</a>
+            </ng-container>
+
+            <!-- Vista Logueado -->
+            <div *ngIf="isLoggedIn" class="user-profile">
+                <a href="http://localhost:4201" class="btn-primary" style="margin-right: 15px; text-decoration: none;">
+                    Ir al CRM <i class="fas fa-external-link-alt"></i>
+                </a>
+
+                <div class="avatar">
+                    <span>{{user?.nombre?.charAt(0) || 'U'}}</span>
+                </div>
+                <span class="username">{{user?.nombre}}</span>
+                <button (click)="logout()" class="btn-logout" title="Cerrar Sesión">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
         </div>
     </div>
 </nav>
+
+<!-- MODAL DE LOGIN (Global Styled) -->
+<div class="global-login-overlay" *ngIf="showLoginModal" (click)="closeLoginModal()">
+    <div class="global-login-container" (click)="$event.stopPropagation()">
+        <button class="global-close-btn" (click)="closeLoginModal()">&times;</button>
+
+        <div class="global-modal-content">
+            <!-- Lado Izquierdo: Formulario -->
+            <div class="global-modal-left">
+                <div class="global-login-header">
+                    <h2>Ingresa a tu cuenta</h2>
+                    <p>¿No tienes una cuenta? <a routerLink="/register" (click)="closeLoginModal()">Regístrate</a> y
+                        prueba 14 días gratis</p>
+                </div>
+
+                <form (ngSubmit)="onLoginSubmit()">
+                    <div class="global-form-group">
+                        <label>Email</label>
+                        <input type="email" [(ngModel)]="loginData.email" name="email" required
+                            placeholder="Ingresa tu email">
+                    </div>
+
+                    <div class="global-form-group">
+                        <label>Contraseña</label>
+                        <input type="password" [(ngModel)]="loginData.password" name="password" required
+                            placeholder="Ingresa tu contraseña">
+                    </div>
+
+                    <div class="global-form-actions">
+                        <div class="global-checkbox">
+                            <input type="checkbox" id="rememberMeModal">
+                            <label for="rememberMeModal">Recordarme</label>
+                        </div>
+                        <a href="#" class="global-forgot-link">¿Has olvidado tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="global-btn-submit" [disabled]="isLoading">
+                        {{ isLoading ? 'Ingresando...' : 'Ingresar' }}
+                    </button>
+                </form>
+            </div>
+
+            <!-- Lado Derecho: Imagen Visual -->
+            <div class="global-modal-right">
+                <div class="global-visual-content">
+                    <h3>Gestiona tu negocio con inteligencia</h3>
+                    <p>Únete a más de 10,000 empresas que confían en Gnosis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

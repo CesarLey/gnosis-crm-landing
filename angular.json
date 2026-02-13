@@ -29,7 +29,10 @@
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
-            "outputMode": "server",
+            "prerender": {
+              "discoverRoutes": false,
+              "routesFile": "src/prerender-routes.txt"
+            },
             "ssr": {
               "entry": "src/server.ts"
             }

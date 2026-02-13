@@ -1,0 +1,8 @@
+/
+/pricing
+/clients
+/resources
+/contact
+/videos
+/help
+/blog

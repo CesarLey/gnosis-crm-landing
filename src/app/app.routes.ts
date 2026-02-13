@@ -15,11 +15,14 @@ import { RegisterComponent } from './pages/register/register.component';
 
 
 
+import { Checkout } from './pages/checkout/checkout';
+
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'pricing', component: PricingComponent },
+    { path: 'checkout', component: Checkout }, // <--- NUEVA RUTA DE PAGO
     { path: 'clients', component: ClientsComponent },
     { path: 'resources', component: ResourcesComponent },
     { path: 'contact', component: ContactComponent },

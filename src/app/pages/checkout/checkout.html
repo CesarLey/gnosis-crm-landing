@@ -1,0 +1,42 @@
+<div class="checkout-container">
+    <div class="checkout-card">
+        <h2 class="title" *ngIf="!paymentSuccess">Confirmar Compra</h2>
+        <h2 class="title" *ngIf="paymentSuccess">¡Pago Completado! 🎉</h2>
+
+        <div class="summary" *ngIf="!paymentSuccess">
+            <div class="plan-details">
+                <span class="plan-name">{{description}}</span>
+                <span class="price">${{amount}} MXN</span>
+            </div>
+            <div class="total-row">
+                <span>Total a Pagar:</span>
+                <span class="total-price">${{amount}} MXN</span>
+            </div>
+        </div>
+
+        <!-- MENSANJE DE ERROR -->
+        <div class="alert alert-danger" *ngIf="paymentError">
+            {{errorMessage}}
+        </div>
+
+        <!-- PAYPAL CONTAINER -->
+        <div id="paypal-button-container" #paypalContainer *ngIf="!paymentSuccess"></div>
+
+        <!-- LOADING INDICATOR -->
+        <div class="loading" *ngIf="loading && !paymentSuccess">
+            <div class="spinner"></div>
+            Cargando pasarela segura...
+        </div>
+
+        <!-- SUCCESS MESSAGE -->
+        <div class="success-message" *ngIf="paymentSuccess">
+            <p>Tu suscripción ha sido activada correctamente.</p>
+            <p>Te hemos enviado los detalles a tu correo.</p>
+            <a routerLink="/login" class="btn-primary">Ir a mi Panel</a>
+        </div>
+
+        <div class="security-badges" *ngIf="!paymentSuccess">
+            <i class="fas fa-lock"></i> Pago 100% Seguro con PayPal
+        </div>
+    </div>
+</div>

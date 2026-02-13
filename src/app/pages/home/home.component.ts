@@ -1,6 +1,6 @@
 import { Component, ElementRef, AfterViewInit, OnDestroy, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -15,8 +15,18 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
     constructor(
         private el: ElementRef,
-        @Inject(PLATFORM_ID) private platformId: Object
+        @Inject(PLATFORM_ID) private platformId: Object,
+        private router: Router
     ) { }
+
+    onCtaClick(): void {
+        const token = localStorage.getItem('token');
+        if (token) {
+            window.location.href = 'http://localhost:4201';
+        } else {
+            this.router.navigate(['/register']);
+        }
+    }
 
     ngAfterViewInit(): void {
         if (isPlatformBrowser(this.platformId)) {

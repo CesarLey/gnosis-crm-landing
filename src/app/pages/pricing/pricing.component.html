@@ -65,7 +65,9 @@
                     <p class="price-subtitle">{{ isAnnual() ? 'En un solo pago anual de $3,588' : 'Pago mensual
                         recurrente' }}</p>
                 </div>
-                <a routerLink="/register" class="btn-primary full-width">Probar Gratis</a>
+                <a [routerLink]="['/checkout']"
+                    [queryParams]="{ plan: 'basic', billing: isAnnual() ? 'anual' : 'mensual' }"
+                    class="btn-primary full-width">Comprar Ahora</a>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-circle-check"></i> 5 Usuarios</li>
                     <li><i class="fa-solid fa-circle-check"></i> 1000 Clientes</li>
@@ -91,7 +93,9 @@
                     <p class="price-subtitle">{{ isAnnual() ? 'En un solo pago anual de $8,988' : 'Pago mensual
                         recurrente' }}</p>
                 </div>
-                <a routerLink="/register" class="btn-primary full-width">Probar Gratis</a>
+                <a [routerLink]="['/checkout']"
+                    [queryParams]="{ plan: 'pro', billing: isAnnual() ? 'anual' : 'mensual' }"
+                    class="btn-primary full-width">Comprar Ahora</a>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-circle-check"></i> Usuarios Ilimitados</li>
                     <li><i class="fa-solid fa-circle-check"></i> Conexión API Meta (WhatsApp/FB/IG)</li>
