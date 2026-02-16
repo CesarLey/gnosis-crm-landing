@@ -55,14 +55,14 @@
                 <div class="card-header">
                     <h3>Plan Básico</h3>
                     <div class="price">
-                        <span class="old-price" *ngIf="isAnnual()">$399</span>
+                        <span class="old-price" *ngIf="isAnnual()">$4,788</span>
                         <span class="discount-badge" *ngIf="isAnnual()">-25%</span>
                     </div>
                     <div class="price-main">
-                        <span class="currency">$</span>{{ isAnnual() ? '299' : '399' }} <span class="period">MXN /
-                            mes</span>
+                        <span class="currency">$</span>{{ isAnnual() ? '3,588' : '399' }} <span class="period">MXN /
+                            {{ isAnnual() ? 'año' : 'mes' }}</span>
                     </div>
-                    <p class="price-subtitle">{{ isAnnual() ? 'En un solo pago anual de $3,588' : 'Pago mensual
+                    <p class="price-subtitle">{{ isAnnual() ? 'Incluye 25% de descuento' : 'Pago mensual
                         recurrente' }}</p>
                 </div>
                 <a [routerLink]="['/checkout']"
@@ -83,14 +83,14 @@
                 <div class="card-header">
                     <h3>Plan Pro</h3>
                     <div class="price">
-                        <span class="old-price" *ngIf="isAnnual()">$999</span>
+                        <span class="old-price" *ngIf="isAnnual()">$11,988</span>
                         <span class="discount-badge" *ngIf="isAnnual()">-25%</span>
                     </div>
                     <div class="price-main">
-                        <span class="currency">$</span>{{ isAnnual() ? '749' : '999' }} <span class="period">MXN /
-                            mes</span>
+                        <span class="currency">$</span>{{ isAnnual() ? '8,988' : '999' }} <span class="period">MXN /
+                            {{ isAnnual() ? 'año' : 'mes' }}</span>
                     </div>
-                    <p class="price-subtitle">{{ isAnnual() ? 'En un solo pago anual de $8,988' : 'Pago mensual
+                    <p class="price-subtitle">{{ isAnnual() ? 'Incluye 25% de descuento' : 'Pago mensual
                         recurrente' }}</p>
                 </div>
                 <a [routerLink]="['/checkout']"
