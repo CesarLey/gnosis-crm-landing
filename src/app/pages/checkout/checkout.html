@@ -1,14 +1,42 @@
 <div class="checkout-container">
     <div class="checkout-card">
         <h2 class="title" *ngIf="!paymentSuccess">Confirmar Compra</h2>
-        <h2 class="title" *ngIf="paymentSuccess">¡Pago Completado! 🎉</h2>
+
+        <!-- SUCCESS ANIMATION -->
+        <div class="success-message" *ngIf="paymentSuccess">
+            <div class="success-icon">🎉</div>
+            <h3>¡Pago Completado!</h3>
+            <p>Tu suscripción ha sido activada correctamente.</p>
+            <p>Enviamos los detalles a tu correo.</p>
+            <a routerLink="/login" class="btn-primary">Ir a mi Panel &rarr;</a>
+        </div>
 
         <div class="summary" *ngIf="!paymentSuccess">
             <div class="plan-details">
                 <span class="plan-name">{{description}}</span>
-                <span class="price">${{amount}} MXN</span>
+                <span class="price">${{originalAmount}} MXN</span>
             </div>
-            <div class="total-row">
+
+            <!-- COUPON SECTION -->
+            <div class="coupon-section">
+                <input type="text" [(ngModel)]="couponCode" placeholder="¿Tienes un código de cupón?"
+                    class="coupon-input" [disabled]="discountApplied">
+                <button class="btn-apply" (click)="applyCoupon()" [disabled]="discountApplied || !couponCode">
+                    {{ discountApplied ? 'Aplicado' : 'Aplicar' }}
+                </button>
+            </div>
+
+            <div class="coupon-message" *ngIf="couponMessage"
+                [ngClass]="{'text-success': discountApplied, 'text-danger': !discountApplied}">
+                {{ couponMessage }}
+            </div>
+
+            <div class="discount-row" *ngIf="discountApplied">
+                <span>Descuento aplicado:</span>
+                <span>-${{discountAmount}} MXN</span>
+            </div>
+
+            <div class="total-row" [style.margin-top]="discountApplied ? '1rem' : '0'">
                 <span>Total a Pagar:</span>
                 <span class="total-price">${{amount}} MXN</span>
             </div>
@@ -39,7 +67,7 @@
                         <span class="stripe-icon-item">🏪</span>
                     </div>
                     <div class="stripe-text">
-                        <span class="stripe-main" *ngIf="!stripeLoading">Tarjeta · OXXO · Más opciones</span>
+                        <span class="stripe-main" *ngIf="!stripeLoading">Tarjeta · OXXO · SPEI</span>
                         <span class="stripe-main" *ngIf="stripeLoading">Redirigiendo a pago seguro...</span>
                         <span class="stripe-sub" *ngIf="!stripeLoading">Visa, Mastercard, AMEX, OXXO y más</span>
                     </div>
@@ -47,13 +75,15 @@
                 <span class="stripe-arrow" *ngIf="!stripeLoading">→</span>
                 <div class="stripe-spinner" *ngIf="stripeLoading"></div>
             </button>
-        </div>
 
-        <!-- SUCCESS MESSAGE -->
-        <div class="success-message" *ngIf="paymentSuccess">
-            <p>Tu suscripción ha sido activada correctamente.</p>
-            <p>Te hemos enviado los detalles a tu correo.</p>
-            <a routerLink="/login" class="btn-primary">Ir a mi Panel</a>
+            <!-- FREE TRIAL LINK -->
+            <div class="free-trial-container">
+                <div class="separator"><span>¿Aún no estás convencido?</span></div>
+                <button class="btn-trial" (click)="startFreeTrial()" [disabled]="trialLoading">
+                    <span *ngIf="!trialLoading">Iniciar Prueba Gratis de 7 Días</span>
+                    <span *ngIf="trialLoading">Activando prueba...</span>
+                </button>
+            </div>
         </div>
 
         <div class="security-badges" *ngIf="!paymentSuccess">

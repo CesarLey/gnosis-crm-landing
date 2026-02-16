@@ -46,6 +46,65 @@
     color: #1a1a2e;
 }
 
+/* Coupon Section */
+.coupon-section {
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+.coupon-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.coupon-input:focus {
+    border-color: #3498db;
+}
+
+.btn-apply {
+    padding: 10px 18px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #555;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-apply:hover {
+    background-color: #e9ecef;
+}
+
+.discount-row {
+    display: flex;
+    justify-content: space-between;
+    color: #2ecc71;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.coupon-message {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.text-success {
+    color: #2ecc71;
+}
+
+.text-danger {
+    color: #e74c3c;
+}
+
 /* Payment Methods Section */
 .payment-methods {
     margin-top: 0.5rem;
@@ -169,6 +228,36 @@
     animation: spin 0.8s linear infinite;
 }
 
+/* Free Trial Button */
+.free-trial-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-trial {
+    background: white;
+    color: #3498db;
+    border: 2px solid #3498db;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-trial:hover {
+    background: #eaf6fd;
+    transform: translateY(-2px);
+}
+
+.btn-trial:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
 /* Loading */
 .loading {
     display: flex;
@@ -198,15 +287,30 @@
     }
 }
 
+/* Success Animation */
 .success-message {
     text-align: center;
     color: #2ecc71;
-    padding: 1rem 0;
+    padding: 2rem 0;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-message h3 {
+    color: #2d3436;
+    margin-bottom: 0.5rem;
 }
 
 .success-message p {
     margin-bottom: 0.5rem;
     font-size: 1.05rem;
+    color: #636e72;
 }
 
 .btn-primary {
@@ -216,13 +320,43 @@
     color: white;
     text-decoration: none;
     border-radius: 8px;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     font-weight: 600;
     transition: transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
 }
 
 .btn-primary:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .alert-danger {
