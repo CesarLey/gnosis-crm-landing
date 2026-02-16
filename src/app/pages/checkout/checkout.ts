@@ -21,6 +21,7 @@ export class Checkout implements OnInit {
   billing: string = '';
   amount: number = 0;
   description: string = '';
+  availablePlans: any[] = []; // Lista de planes desde backend
 
   // Estados de carga e interfaz
   loading: boolean = true;
@@ -35,6 +36,8 @@ export class Checkout implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.fetchPlans();
+
     // VERIFICAR SI EL USUARIO ESTÁ LOGUEADO
     const token = localStorage.getItem('token');
     if (!token) {
@@ -96,6 +99,16 @@ export class Checkout implements OnInit {
     });
   }
 
+  fetchPlans() {
+    this.http.get<any[]>(`${environment.apiUrl}/api/planes`).subscribe({
+      next: (plans) => {
+        this.availablePlans = plans;
+        console.log('Planes cargados:', plans);
+      },
+      error: (err) => console.error('Error cargando planes:', err)
+    });
+  }
+
   calculateTotal() {
     // Lógica simple de precios (debe coincidir con pricing.component y backend)
     // PRECIOS BASE
@@ -150,9 +163,18 @@ export class Checkout implements OnInit {
               const token = localStorage.getItem('token');
               console.log('Token obtenido:', token ? 'Sí' : 'No');
 
-              // Mapear plan string a ID real de base de datos
-              const planIdMap: any = { 'basic': 1, 'pro': 2 };
-              const planId = planIdMap[this.plan] || 1;
+              // Buscar ID real del plan en la lista obtenida del backend
+              let dbPlan = this.availablePlans.find(p => p.slug === (this.plan === 'basic' ? 'basico' : this.plan));
+
+              const planIdMap: any = { 'basic': 4, 'pro': 5 }; // Fallback IDs reales de la BD
+              // FIX: Verificar 'id' o 'id_plan' ya que el modelo define id_plan como PK
+              const planId = dbPlan ? (dbPlan.id || dbPlan.id_plan) : (planIdMap[this.plan] || 2);
+
+              if (dbPlan) {
+                console.log(`Plan encontrado en frontend: ${dbPlan.nombre} (ID: ${dbPlan.id || dbPlan.id_plan})`);
+              } else {
+                console.warn(`Plan '${this.plan}' no encontrado en lista, usando ID fallback: ${planId}`);
+              }
 
               return this.http.post<any>(`${environment.apiUrl}/api/payments/paypal/create-order-paypal`, {
                 planId: planId,
