@@ -17,7 +17,8 @@
 
             <!-- Vista Logueado -->
             <div *ngIf="isLoggedIn" class="user-profile">
-                <a href="http://localhost:4201" class="btn-primary" style="margin-right: 15px; text-decoration: none;">
+                <!-- URL Dinámica al CRM -->
+                <a [href]="crmUrl" class="btn-primary" style="margin-right: 15px; text-decoration: none;">
                     Ir al CRM <i class="fas fa-external-link-alt"></i>
                 </a>
 
