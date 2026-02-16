@@ -24,13 +24,18 @@ export class RegisterComponent implements OnInit {
         phone: '',
         password: '',
         name: '',
-        lastName: ''
+        lastName: '',
+        companyName: '' // Nuevo campo
     };
 
     isLoading = false;
     errorMessage = '';
     returnUrl: string | null = null;
     queryParams: any = {};
+
+    // Datos del plan seleccionado
+    selectedPlan: string = 'free';
+    selectedBilling: string = 'mensual';
 
     countries: Country[] = [
         { name: 'México', code: '+52', flag: 'https://flagcdn.com/w20/mx.png' },
@@ -49,7 +54,12 @@ export class RegisterComponent implements OnInit {
     ngOnInit() {
         this.route.queryParams.subscribe(params => {
             this.returnUrl = params['returnUrl'];
+            // Capturar plan y billing si existen
+            if (params['plan']) this.selectedPlan = params['plan'];
+            if (params['billing']) this.selectedBilling = params['billing'];
+
             this.queryParams = params;
+            console.log('Plan seleccionado:', this.selectedPlan, 'Billing:', this.selectedBilling);
         });
     }
 
@@ -63,8 +73,11 @@ export class RegisterComponent implements OnInit {
     }
 
     onSubmit() {
-        if (!this.registerData.name || !this.registerData.lastName || !this.registerData.email || !this.registerData.password) {
-            this.errorMessage = 'Por favor completa todos los campos requeridos.';
+        // Validar campos requeridos (incluyendo companyName)
+        if (!this.registerData.name || !this.registerData.lastName ||
+            !this.registerData.email || !this.registerData.password ||
+            !this.registerData.companyName) {
+            this.errorMessage = 'Por favor completa todos los campos requeridos, incluyendo el nombre de tu empresa.';
             return;
         }
 
@@ -75,7 +88,10 @@ export class RegisterComponent implements OnInit {
             fullName: `${this.registerData.name} ${this.registerData.lastName}`,
             email: this.registerData.email,
             password: this.registerData.password,
-            id_rol: 2
+            id_rol: 2,
+            companyName: this.registerData.companyName, // Enviar nombre empresa
+            plan: this.selectedPlan,                    // Enviar plan
+            billing: this.selectedBilling               // Enviar facturación
         };
 
         this.http.post<any>(`${environment.apiUrl}/api/auth/register`, payload)
@@ -86,18 +102,24 @@ export class RegisterComponent implements OnInit {
 
                     if (res.token) {
                         localStorage.setItem('token', res.token);
-                        // El backend devuelve 'usuario' en el objeto de respuesta
                         localStorage.setItem('user', JSON.stringify(res.usuario || {}));
 
-                        if (this.returnUrl) {
-                            const { returnUrl, ...restParams } = this.queryParams;
-                            // Construct query string manually or use router.createUrlTree then serialize
-                            const urlTree = this.router.createUrlTree([this.returnUrl], { queryParams: restParams });
-                            const url = this.router.serializeUrl(urlTree);
-                            window.location.href = url;
+                        // Lógica de redirección basada en si requiere pago
+                        // Si el plan NO es free, redirigir a checkout (o si el backend lo indica)
+                        // Por ahora, asumimos que basic/pro van a checkout, free a CRM.
+                        // Idealmente el backend nos devolvería un flag `requiresPayment`
+
+                        // NOTA: Para este MVP, si es Basic o Pro, vamos a Checkout.
+                        if (this.selectedPlan === 'basic' || this.selectedPlan === 'pro') {
+                            this.router.navigate(['/checkout'], {
+                                queryParams: {
+                                    plan: this.selectedPlan,
+                                    billing: this.selectedBilling
+                                }
+                            });
                         } else {
-                            // Redirigir al CRM (ngx-admin) en el puerto 4201
-                            window.location.href = 'http://localhost:4201';
+                            // Si es Free, directo al CRM
+                            window.location.href = `http://localhost:4201/auth/token?t=${res.token}`;
                         }
                     }
                 },

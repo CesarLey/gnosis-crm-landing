@@ -41,7 +41,8 @@
                     </div>
                     <p class="price-subtitle">Para empezar.</p>
                 </div>
-                <a routerLink="/register" class="btn-primary full-width">Probar Gratis</a>
+                <a [routerLink]="['/register']" [queryParams]="{ plan: 'free' }" class="btn-primary full-width">Probar
+                    Gratis</a>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-circle-check"></i> 1 Usuario</li>
                     <li><i class="fa-solid fa-circle-check"></i> 50 Clientes</li>
@@ -65,9 +66,9 @@
                     <p class="price-subtitle">{{ isAnnual() ? 'Incluye 25% de descuento' : 'Pago mensual
                         recurrente' }}</p>
                 </div>
-                <a [routerLink]="['/checkout']"
+                <a [routerLink]="['/register']"
                     [queryParams]="{ plan: 'basic', billing: isAnnual() ? 'anual' : 'mensual' }"
-                    class="btn-primary full-width">Comprar Ahora</a>
+                    class="btn-primary full-width">Elegir Plan Básico</a>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-circle-check"></i> 5 Usuarios</li>
                     <li><i class="fa-solid fa-circle-check"></i> 1000 Clientes</li>
@@ -93,9 +94,9 @@
                     <p class="price-subtitle">{{ isAnnual() ? 'Incluye 25% de descuento' : 'Pago mensual
                         recurrente' }}</p>
                 </div>
-                <a [routerLink]="['/checkout']"
+                <a [routerLink]="['/register']"
                     [queryParams]="{ plan: 'pro', billing: isAnnual() ? 'anual' : 'mensual' }"
-                    class="btn-primary full-width">Comprar Ahora</a>
+                    class="btn-primary full-width">Elegir Plan Pro</a>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-circle-check"></i> Usuarios Ilimitados</li>
                     <li><i class="fa-solid fa-circle-check"></i> Conexión API Meta (WhatsApp/FB/IG)</li>

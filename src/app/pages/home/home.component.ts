@@ -24,7 +24,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
         if (token) {
             window.location.href = 'http://localhost:4201';
         } else {
-            this.router.navigate(['/register']);
+            this.router.navigate(['/pricing']);
         }
     }
 
