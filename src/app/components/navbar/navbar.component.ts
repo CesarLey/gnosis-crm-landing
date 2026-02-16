@@ -22,6 +22,9 @@ export class NavbarComponent implements OnInit {
     isLoading = false;
     errorMessage: string = '';
 
+    // URL del CRM (Dinámica)
+    crmUrl = environment.crmUrl;
+
     constructor(
         private http: HttpClient,
         private router: Router,
