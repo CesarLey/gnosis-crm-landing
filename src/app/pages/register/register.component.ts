@@ -119,7 +119,7 @@ export class RegisterComponent implements OnInit {
                             });
                         } else {
                             // Si es Free, directo al CRM
-                            window.location.href = `http://localhost:4201/auth/token?t=${res.token}`;
+                            window.location.href = `${environment.crmUrl}/auth/token?t=${res.token}`;
                         }
                     }
                 },

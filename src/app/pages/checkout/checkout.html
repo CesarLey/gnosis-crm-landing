@@ -8,7 +8,7 @@
             <h3>¡Pago Completado!</h3>
             <p>Tu suscripción ha sido activada correctamente.</p>
             <p>Enviamos los detalles a tu correo.</p>
-            <a routerLink="/login" class="btn-primary">Ir a mi Panel &rarr;</a>
+            <button (click)="goToDashboard()" class="btn-primary">Ir a mi Panel &rarr;</button>
         </div>
 
         <div class="summary" *ngIf="!paymentSuccess">

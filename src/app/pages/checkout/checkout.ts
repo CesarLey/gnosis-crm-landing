@@ -44,6 +44,17 @@ export class Checkout implements OnInit {
   // Variable prueba gratis
   trialLoading: boolean = false;
 
+  public crmUrl = environment.crmUrl;
+
+  goToDashboard() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      window.location.href = `${this.crmUrl}/auth/token?t=${token}`;
+    } else {
+      window.location.href = `${this.crmUrl}/auth/login`;
+    }
+  }
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
