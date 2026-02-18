@@ -377,3 +377,39 @@
     color: #aaa;
     letter-spacing: 0.03em;
 }
+
+/* Responsive */
+@media (max-width: 480px) {
+    .checkout-container {
+        padding: 1rem;
+    }
+
+    .checkout-card {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .plan-details {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .total-row {
+        font-size: 1.2rem;
+    }
+
+    .stripe-button {
+        padding: 12px 16px;
+    }
+
+    .stripe-main {
+        font-size: 0.85rem;
+    }
+
+    .stripe-sub {
+        font-size: 0.65rem;
+    }
+}

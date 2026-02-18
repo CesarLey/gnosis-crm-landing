@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit {
     isLoggedIn = false;
     user: any = null;
     showLoginModal = false;
+    mobileMenuOpen = false;
 
     loginData = { email: '', password: '' };
     isLoading = false;
@@ -24,6 +25,21 @@ export class NavbarComponent implements OnInit {
 
     // URL del CRM (Dinámica)
     crmUrl = environment.crmUrl;
+
+    toggleMobileMenu() {
+        this.mobileMenuOpen = !this.mobileMenuOpen;
+        // Prevent body scroll when menu is open
+        if (isPlatformBrowser(this.platformId)) {
+            document.body.style.overflow = this.mobileMenuOpen ? 'hidden' : '';
+        }
+    }
+
+    closeMobileMenu() {
+        this.mobileMenuOpen = false;
+        if (isPlatformBrowser(this.platformId)) {
+            document.body.style.overflow = '';
+        }
+    }
 
     constructor(
         private http: HttpClient,

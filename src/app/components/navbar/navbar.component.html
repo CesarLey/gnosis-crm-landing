@@ -3,15 +3,24 @@
         <div class="logo">
             <a routerLink="/"><img src="assets/logo.jpg" alt="Gnosis Logo"></a>
         </div>
-        <div class="nav-links">
-            <a routerLink="/" fragment="features">Funcionalidades</a>
-            <a routerLink="/pricing" routerLinkActive="active">Precios</a>
-            <a routerLink="/clients" routerLinkActive="active">Clientes</a>
-            <a routerLink="/resources" routerLinkActive="active">Recursos</a>
+
+        <!-- Hamburger Button (mobile only) -->
+        <button class="hamburger" (click)="toggleMobileMenu()" [class.active]="mobileMenuOpen" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Desktop nav links -->
+        <div class="nav-links" [class.mobile-open]="mobileMenuOpen">
+            <a routerLink="/" fragment="features" (click)="closeMobileMenu()">Funcionalidades</a>
+            <a routerLink="/pricing" routerLinkActive="active" (click)="closeMobileMenu()">Precios</a>
+            <a routerLink="/clients" routerLinkActive="active" (click)="closeMobileMenu()">Clientes</a>
+            <a routerLink="/resources" routerLinkActive="active" (click)="closeMobileMenu()">Recursos</a>
 
             <!-- Vista No Logueado -->
             <ng-container *ngIf="!isLoggedIn">
-                <a routerLink="/pricing" class="btn-primary">Probar Gratis</a>
+                <a routerLink="/pricing" class="btn-primary" (click)="closeMobileMenu()">Probar Gratis</a>
             </ng-container>
 
             <!-- Vista Logueado -->
@@ -31,6 +40,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Mobile overlay -->
+    <div class="mobile-overlay" *ngIf="mobileMenuOpen" (click)="closeMobileMenu()"></div>
 </nav>
 
 <!-- MODAL DE LOGIN (Global Styled) -->
