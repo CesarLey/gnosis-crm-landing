@@ -23,7 +23,7 @@
                     </div>
                     <div class="info-text">
                         <h3>Ventas y Consultoría</h3>
-                        <p>ventas@gnosis.com</p>
+                        <p><a href="mailto:gnosiscrm@gmail.com" class="contact-link">gnosiscrm@gmail.com</a></p>
                         <span>Respuesta en menos de 2 horas.</span>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="info-text">
                         <h3>Soporte Técnico</h3>
-                        <p>soporte@gnosis.com</p>
+                        <p><a href="mailto:gnosiscrm@gmail.com" class="contact-link">gnosiscrm@gmail.com</a></p>
                         <span>Atención 24/7 para clientes Gnosis.</span>
                     </div>
                 </div>
@@ -45,7 +45,8 @@
                     </div>
                     <div class="info-text">
                         <h3>WhatsApp Directo</h3>
-                        <p>+52 55 1234 5678</p>
+                        <p><a href="https://wa.me/529991796504" target="_blank" class="contact-link">+52 999 179
+                                6504</a></p>
                         <span>Consultas rápidas y demos en vivo.</span>
                     </div>
                 </div>
@@ -60,13 +61,14 @@
             <!-- Form Column -->
             <div class="contact-form-panel">
                 <div class="glass-form-container">
-                    <form (submit)="$event.preventDefault()" class="modern-form">
+                    <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="modern-form">
                         <div class="form-row">
                             <div class="form-field">
                                 <label>Nombre Completo</label>
                                 <div class="input-wrapper">
                                     <i class="fa-solid fa-user"></i>
-                                    <input type="text" placeholder="Ej. Juan Pérez">
+                                    <input type="text" name="nombre" [(ngModel)]="contactData.nombre" required
+                                        placeholder="Ej. Juan Pérez">
                                 </div>
                             </div>
                         </div>
@@ -76,7 +78,8 @@
                                 <label>Correo Institucional</label>
                                 <div class="input-wrapper">
                                     <i class="fa-solid fa-at"></i>
-                                    <input type="email" placeholder="juan@tuempresa.com">
+                                    <input type="email" name="email" [(ngModel)]="contactData.email" required email
+                                        placeholder="juan@tuempresa.com">
                                 </div>
                             </div>
                         </div>
@@ -86,12 +89,12 @@
                                 <label>Asunto</label>
                                 <div class="input-wrapper">
                                     <i class="fa-solid fa-tag"></i>
-                                    <select>
+                                    <select name="asunto" [(ngModel)]="contactData.asunto" required>
                                         <option value="">Selecciona una opción</option>
-                                        <option value="ventas">Información de Ventas</option>
-                                        <option value="demo">Solicitar Demo</option>
-                                        <option value="soporte">Soporte Técnico</option>
-                                        <option value="partner">Alianzas Estratégicas</option>
+                                        <option value="Ventas">Información de Ventas</option>
+                                        <option value="Demo">Solicitar Demo</option>
+                                        <option value="Soporte">Soporte Técnico</option>
+                                        <option value="Partner">Alianzas Estratégicas</option>
                                     </select>
                                 </div>
                             </div>
@@ -102,15 +105,26 @@
                                 <label>Mensaje</label>
                                 <div class="input-wrapper textarea-wrapper">
                                     <i class="fa-solid fa-comment-dots"></i>
-                                    <textarea
+                                    <textarea name="mensaje" [(ngModel)]="contactData.mensaje" required
                                         placeholder="Cuéntanos brevemente sobre tu negocio y cómo podemos ayudarte..."></textarea>
                                 </div>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn-send">
-                            <span>Enviar Mensaje</span>
-                            <i class="fa-solid fa-paper-plane"></i>
+                        <!-- Feedback Message -->
+                        <div *ngIf="errorMessage" class="error-message">
+                            {{ errorMessage }}
+                        </div>
+
+                        <div *ngIf="successMessage" class="success-message">
+                            {{ successMessage }}
+                        </div>
+
+                        <button type="submit" class="btn-send" [disabled]="!contactForm.form.valid || isLoading">
+                            <span *ngIf="!isLoading">Enviar Mensaje</span>
+                            <span *ngIf="isLoading">Enviando...</span>
+                            <i *ngIf="!isLoading" class="fa-solid fa-paper-plane"></i>
+                            <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></i>
                         </button>
                     </form>
                 </div>
