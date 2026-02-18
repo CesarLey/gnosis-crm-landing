@@ -1,6 +1,7 @@
 import { Component, ElementRef, AfterViewInit, OnDestroy, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-home',
@@ -22,7 +23,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     onCtaClick(): void {
         const token = localStorage.getItem('token');
         if (token) {
-            window.location.href = 'http://localhost:4201';
+            window.location.href = `${environment.crmUrl}/auth/token?t=${token}`;
         } else {
             this.router.navigate(['/pricing']);
         }
