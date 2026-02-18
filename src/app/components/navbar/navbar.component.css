@@ -9,6 +9,11 @@
     font-size: 0.95rem;
     padding: 0;
     color: inherit;
+    transition: color 0.3s;
+}
+
+.btn-login:hover {
+    color: var(--primary-color, #00BFA6);
 }
 
 /* ============================================
@@ -396,6 +401,17 @@
         text-align: center;
         width: 100%;
         display: block;
+    }
+
+    .nav-links .btn-login {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 15px 0;
+        font-size: 1.1rem;
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        margin: 0;
     }
 
     /* User profile in mobile */
