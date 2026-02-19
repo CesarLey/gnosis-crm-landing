@@ -11,21 +11,25 @@ interface Country {
     flag: string;
 }
 
+import { RecaptchaModule } from 'ng-recaptcha';
+
 @Component({
     selector: 'app-register',
     standalone: true,
-    imports: [RouterLink, FormsModule, NgIf, NgFor, HttpClientModule, CommonModule],
+    imports: [RouterLink, FormsModule, NgIf, NgFor, HttpClientModule, CommonModule, RecaptchaModule],
     templateUrl: './register.component.html',
     styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
+    environment = environment; // Hacer disponible para el template
     registerData = {
         email: '',
         phone: '',
         password: '',
         name: '',
         lastName: '',
-        companyName: '' // Nuevo campo
+        companyName: '', // Nuevo campo
+        captchaToken: '' // Token de captcha
     };
 
     isLoading = false;
@@ -72,7 +76,17 @@ export class RegisterComponent implements OnInit {
         this.showCountryDropdown = false;
     }
 
+    onResolved(token: string | null) {
+        this.registerData.captchaToken = token || '';
+    }
+
     onSubmit() {
+        // Validar captcha
+        if (!this.registerData.captchaToken) {
+            this.errorMessage = 'Por favor verifica que no eres un robot.';
+            return;
+        }
+
         // Validar campos requeridos (incluyendo companyName)
         if (!this.registerData.name || !this.registerData.lastName ||
             !this.registerData.email || !this.registerData.password ||
@@ -91,7 +105,8 @@ export class RegisterComponent implements OnInit {
             id_rol: 2,
             companyName: this.registerData.companyName, // Enviar nombre empresa
             plan: this.selectedPlan,                    // Enviar plan
-            billing: this.selectedBilling               // Enviar facturación
+            billing: this.selectedBilling,               // Enviar facturación
+            captchaToken: this.registerData.captchaToken // Enviar token captcha
         };
 
         this.http.post<any>(`${environment.apiUrl}/api/auth/register`, payload)

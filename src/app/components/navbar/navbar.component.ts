@@ -6,20 +6,23 @@ import { FormsModule } from '@angular/forms';
 import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
 
+import { RecaptchaModule } from 'ng-recaptcha';
+
 @Component({
     selector: 'app-navbar',
     standalone: true,
-    imports: [RouterLink, RouterLinkActive, CommonModule, HttpClientModule, FormsModule],
+    imports: [RouterLink, RouterLinkActive, CommonModule, HttpClientModule, FormsModule, RecaptchaModule],
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit {
+    environment = environment; // Hacer disponible para el template
     isLoggedIn = false;
     user: any = null;
     showLoginModal = false;
     mobileMenuOpen = false;
 
-    loginData = { email: '', password: '' };
+    loginData = { email: '', password: '', captchaToken: '' };
     isLoading = false;
     errorMessage: string = '';
 
@@ -104,8 +107,24 @@ export class NavbarComponent implements OnInit {
         });
     }
 
+    onResolved(token: string | null) {
+        this.loginData.captchaToken = token || '';
+    }
+
     onLoginSubmit() {
         if (this.isLoading) return;
+
+        if (!this.loginData.captchaToken) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Seguridad',
+                text: 'Por favor verifica que no eres un robot.',
+                confirmButtonColor: '#00BFA6',
+                heightAuto: false
+            });
+            return;
+        }
+
         this.isLoading = true;
         this.errorMessage = '';
 

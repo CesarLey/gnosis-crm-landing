@@ -111,6 +111,12 @@
                             </div>
                         </div>
 
+                        <!-- CAPTCHA -->
+                        <div class="form-row captcha-row">
+                            <re-captcha (resolved)="onResolved($event)" [siteKey]="environment.recaptchaSiteKey">
+                            </re-captcha>
+                        </div>
+
                         <!-- Feedback Message -->
                         <div *ngIf="errorMessage" class="error-message">
                             {{ errorMessage }}

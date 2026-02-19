@@ -78,7 +78,16 @@
                         placeholder="Define tu contraseña" required>
                 </div>
 
-                <button type="submit" class="btn-register-submit">¡Comenzar Demo!</button>
+                <!-- CAPTCHA -->
+                <div class="form-group captcha-group" style="display: flex; justify-content: center; margin: 1.5rem 0;">
+                    <re-captcha (resolved)="onResolved($event)" [siteKey]="environment.recaptchaSiteKey">
+                    </re-captcha>
+                </div>
+
+                <button type="submit" class="btn-register-submit" [disabled]="!registerForm.form.valid || isLoading">
+                    <span *ngIf="!isLoading">¡Comenzar Demo!</span>
+                    <span *ngIf="isLoading"><i class="fa-solid fa-spinner fa-spin"></i> Procesando...</span>
+                </button>
 
                 <p class="disclaimer">No necesitas tarjeta de crédito para comenzar</p>
             </form>

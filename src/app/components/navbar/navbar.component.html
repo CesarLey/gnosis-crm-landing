@@ -83,6 +83,13 @@
                         <a href="#" class="global-forgot-link">¿Has olvidado tu contraseña?</a>
                     </div>
 
+                    <!-- CAPTCHA -->
+                    <div class="global-form-group captcha-modal-group"
+                        style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                        <re-captcha (resolved)="onResolved($event)" [siteKey]="environment.recaptchaSiteKey">
+                        </re-captcha>
+                    </div>
+
                     <button type="button" (click)="onLoginSubmit()" class="global-btn-submit" [disabled]="isLoading">
                         {{ isLoading ? 'Ingresando...' : 'Ingresar' }}
                     </button>
