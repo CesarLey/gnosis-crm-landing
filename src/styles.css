@@ -1,17 +1,18 @@
 :root {
     --primary-color: #00BFA6;
-    /* Teal/Aqua (Pulpos Accent) */
     --primary-hover: #009e8a;
     --dark-text: #f8fafc;
-    /* Reversed for Dark Mode */
     --light-text: #94a3b8;
     --bg-color: #0f172a;
-    /* Dark Navy (from first design) */
     --bg-secondary: #1e293b;
-    /* Slightly lighter dark for cards/sections */
     --card-bg: #1e293b;
     --border-color: #334155;
     --font-main: 'Outfit', sans-serif;
+    --font-data: 'Inter', 'Outfit', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {

@@ -1,28 +1,22 @@
 <!-- Hero Section -->
 <header class="hero reveal">
+    <div class="hero-particles">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
     <div class="container hero-content">
         <div class="hero-text">
-            <span class="badge reveal">NUEVO: +10,000 Negocios confían en nosotros</span>
+            <span class="badge reveal"><i class="fa-solid fa-sparkles"></i> NUEVO: Co-Piloto con Inteligencia
+                Artificial</span>
             <h1 class="reveal">El control total de tu negocio, <span class="highlight">en un solo lugar.</span></h1>
             <p class="reveal">Gestiona cada aspecto de tu empresa desde una sola plataforma.<br>Simple, potente y
                 siempre
                 disponible.</p>
 
-            <div class="handwritten-note reveal">
-                Planes desde <span class="price">$399 mxn/mes</span>
-                <svg width="40" height="20" viewBox="0 0 50 30" fill="none" class="arrow-icon">
-                    <path d="M10 25 C 20 10, 35 5, 45 10" stroke="#00BFA6" stroke-width="2" fill="none" />
-                    <path d="M45 10 L 40 12 M 45 10 L 42 6" stroke="#00BFA6" stroke-width="2" fill="none" />
-                </svg>
-            </div>
-
             <div class="hero-buttons reveal">
-                <a (click)="onCtaClick()" class="btn-cta" style="cursor: pointer;">Probar Gratis</a>
-            </div>
-
-            <div class="reviews reveal">
-                <div class="stars">★★★★★</div>
-                <span>4.8 Verificado por <strong>Trustpilot</strong></span>
+                <a (click)="onCtaClick()" class="btn-cta" style="cursor: pointer;">
+                    <i class="fa-solid fa-rocket"></i> Probar Gratis
+                </a>
+                <span class="hero-price-note">Planes desde <strong>$399 MXN/mes</strong> · Sin compromiso</span>
             </div>
         </div>
     </div>
@@ -33,46 +27,72 @@
     <div class="container">
         <div class="preview-card">
             <img src="assets/dashboard.png" alt="Gnosis CRM Dashboard Interface" class="dashboard-img">
-            <!-- Replace with actual screenshot later if user provides one -->
         </div>
     </div>
 </section>
 
-<!-- Social Proof (Logos) -->
+<!-- Stats / Capacidades del Producto -->
+<section class="stats-section reveal">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="fa-solid fa-cubes"></i></div>
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Módulos Integrados</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="stat-number">IA</div>
+                <div class="stat-label">Inteligencia Artificial</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="fa-solid fa-cloud"></i></div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">En la Nube</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="stat-number">Real-Time</div>
+                <div class="stat-label">Datos en Tiempo Real</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack — Powered By -->
 <section class="social-proof reveal">
     <div class="container">
-        <p>Empresas que crecen con Gnosis</p>
+        <p>Tecnologías que potencian Gnosis</p>
         <div class="logo-marquee">
             <div class="logo-track">
                 <!-- Set 1 -->
-                <span>TECHSTART</span>
-                <span>FINCORP</span>
-                <span>INNOVATE</span>
-                <span>NEXUS</span>
-                <span>GLOBAL</span>
-                <!-- Set 2 (Duplicate for Loop) -->
-                <span>TECHSTART</span>
-                <span>FINCORP</span>
-                <span>INNOVATE</span>
-                <span>NEXUS</span>
-                <span>GLOBAL</span>
-                <!-- Set 3 (Duplicate for Loop) -->
-                <span>TECHSTART</span>
-                <span>FINCORP</span>
-                <span>INNOVATE</span>
-                <span>NEXUS</span>
-                <span>GLOBAL</span>
-                <!-- Set 4 (Extra buffer) -->
-                <span>TECHSTART</span>
-                <span>FINCORP</span>
-                <span>INNOVATE</span>
-                <span>NEXUS</span>
-                <span>GLOBAL</span>
-                <span>TECHSTART</span>
-                <span>FINCORP</span>
-                <span>INNOVATE</span>
-                <span>NEXUS</span>
-                <span>GLOBAL</span>
+                <span><i class="fa-brands fa-angular"></i> Angular</span>
+                <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+                <span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                <span><i class="fa-solid fa-brain"></i> Gemini AI</span>
+                <span><i class="fa-solid fa-plug"></i> Socket.io</span>
+                <span><i class="fa-brands fa-docker"></i> Docker</span>
+                <!-- Set 2 (Loop) -->
+                <span><i class="fa-brands fa-angular"></i> Angular</span>
+                <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+                <span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                <span><i class="fa-solid fa-brain"></i> Gemini AI</span>
+                <span><i class="fa-solid fa-plug"></i> Socket.io</span>
+                <span><i class="fa-brands fa-docker"></i> Docker</span>
+                <!-- Set 3 (Loop) -->
+                <span><i class="fa-brands fa-angular"></i> Angular</span>
+                <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+                <span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                <span><i class="fa-solid fa-brain"></i> Gemini AI</span>
+                <span><i class="fa-solid fa-plug"></i> Socket.io</span>
+                <span><i class="fa-brands fa-docker"></i> Docker</span>
+                <!-- Set 4 (Buffer) -->
+                <span><i class="fa-brands fa-angular"></i> Angular</span>
+                <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+                <span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                <span><i class="fa-solid fa-brain"></i> Gemini AI</span>
+                <span><i class="fa-solid fa-plug"></i> Socket.io</span>
+                <span><i class="fa-brands fa-docker"></i> Docker</span>
             </div>
         </div>
     </div>
@@ -88,7 +108,7 @@
             <ul class="rotating-words">
                 <li class="active">Inventario</li>
                 <li>Facturación</li>
-                <li>Tienda en Línea</li>
+                <li>Clientes</li>
                 <li>Campañas</li>
                 <li>Finanzas</li>
                 <li>Reportes</li>
@@ -97,41 +117,116 @@
     </div>
 </section>
 
-<!-- Detailed Feature: POS (Punto de Venta) -->
+<!-- ✨ AI Co-Pilot Section (NEW — Key Differentiator) -->
+<section class="ai-section reveal">
+    <div class="container">
+        <div class="ai-wrapper">
+            <div class="ai-text-content reveal">
+                <span class="badge ai-badge">
+                    <i class="fa-solid fa-microchip"></i> Inteligencia Artificial
+                </span>
+                <h2>Tu co-piloto de negocios con <span class="highlight-ai">IA integrada</span></h2>
+                <p class="ai-subtitle">Gnosis no es solo un CRM. Es un asistente inteligente que aprende de tu negocio y
+                    te ayuda a tomar mejores decisiones.</p>
+
+                <div class="ai-features">
+                    <div class="ai-feature-item reveal">
+                        <div class="ai-feature-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div>
+                            <h4>Email Marketing con IA</h4>
+                            <p>Genera correos persuasivos en segundos. La IA analiza a tu cliente y personaliza cada
+                                mensaje.</p>
+                        </div>
+                    </div>
+                    <div class="ai-feature-item reveal">
+                        <div class="ai-feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h4>Predicción de Ventas</h4>
+                            <p>Identifica automáticamente las oportunidades con mayor probabilidad de cierre.</p>
+                        </div>
+                    </div>
+                    <div class="ai-feature-item reveal">
+                        <div class="ai-feature-icon"><i class="fa-solid fa-brain"></i></div>
+                        <div>
+                            <h4>Diagnóstico Empresarial</h4>
+                            <p>Obtén un análisis inteligente del rendimiento de tu empresa con recomendaciones
+                                accionables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-visual reveal">
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <div class="ai-dot-row">
+                            <span class="ai-dot red"></span>
+                            <span class="ai-dot yellow"></span>
+                            <span class="ai-dot green"></span>
+                        </div>
+                        <span class="ai-card-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Gnosis AI</span>
+                    </div>
+                    <div class="ai-chat-body">
+                        <div class="ai-msg user">
+                            <span>Genera un email para clientes inactivos de hace 30 días</span>
+                        </div>
+                        <div class="ai-msg bot">
+                            <div class="ai-typing">
+                                <i class="fa-solid fa-robot"></i>
+                                <span>Analizando 247 clientes inactivos...</span>
+                            </div>
+                        </div>
+                        <div class="ai-msg bot result">
+                            <strong>✨ Email generado:</strong>
+                            <p>"Hola [nombre], te extrañamos. Sabemos que hace tiempo no nos visitas, por eso preparamos
+                                algo especial para ti..."</p>
+                            <div class="ai-tag-row">
+                                <span class="ai-tag"><i class="fa-solid fa-check"></i> Personalizado</span>
+                                <span class="ai-tag"><i class="fa-solid fa-bullseye"></i> 89% Open Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Feature: Gestión de Clientes -->
 <section class="feature-spotlight reveal">
     <div class="container split-layout reverse-mobile">
         <!-- Left: Text Content -->
         <div class="spotlight-content reveal">
-            <span class="badge">Punto de Venta</span>
-            <h2>Agiliza tus ventas y <span class="highlight">elimina las filas</span></h2>
+            <span class="badge">Gestión de Clientes</span>
+            <h2>Conoce a tus clientes como <span class="highlight">nunca antes</span></h2>
 
             <div class="benefits-grid">
                 <div class="benefit-item reveal">
-                    <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="benefit-icon"><i class="fa-solid fa-address-card"></i></div>
                     <div>
-                        <h4>Cobro Veloz</h4>
-                        <p>Cierra ventas en segundos con o sin lector de código.</p>
+                        <h4>Perfiles Completos</h4>
+                        <p>Toda la info que necesitas en una ficha: contacto, historial, notas y más.</p>
                     </div>
                 </div>
                 <div class="benefit-item reveal">
-                    <div class="benefit-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="benefit-icon"><i class="fa-solid fa-tags"></i></div>
                     <div>
-                        <h4>Ticket Digital</h4>
-                        <p>Ahorra papel enviando tickets por WhatsApp o correo.</p>
+                        <h4>Segmentación</h4>
+                        <p>Etiqueta y clasifica a tus clientes para campañas personalizadas.</p>
                     </div>
                 </div>
                 <div class="benefit-item reveal">
-                    <div class="benefit-icon"><i class="fa-solid fa-plug"></i></div>
+                    <div class="benefit-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
                     <div>
-                        <h4>Compatibilidad Total</h4>
-                        <p>Conecta cajón, impresora y báscula sin complicaciones.</p>
+                        <h4>Historial de Actividad</h4>
+                        <p>Rastrea cada interacción: ventas, emails, llamadas y reuniones.</p>
                     </div>
                 </div>
                 <div class="benefit-item reveal">
-                    <div class="benefit-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="benefit-icon"><i class="fa-solid fa-chart-simple"></i></div>
                     <div>
-                        <h4>Multi-Vendedor</h4>
-                        <p>Cuentas ilimitadas para tus cajeros con permisos personalizados.</p>
+                        <h4>Métricas por Cliente</h4>
+                        <p>Visualiza el valor, frecuencia de compra y satisfacción de cada cliente.</p>
                     </div>
                 </div>
             </div>
@@ -139,52 +234,76 @@
             <a (click)="onCtaClick()" class="btn-cta small-cta" style="cursor: pointer;">Probar Gratis</a>
         </div>
 
-        <!-- Right: POS Mockup -->
-        <div class="pos-mockup-container reveal">
-            <div class="pos-card">
-                <div class="pos-header">
-                    <h4>Nueva Venta</h4>
-                </div>
-                <div class="pos-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <span>Busca o escanea productos...</span>
-                    <i class="fa-solid fa-barcode right"></i>
+        <!-- Right: Client Profile Mockup -->
+        <div class="client-mockup-container reveal">
+            <div class="client-card">
+                <div class="client-card-top">
+                    <div class="client-avatar"><span>MR</span></div>
+                    <div class="client-info">
+                        <h4>María Rodríguez</h4>
+                        <span class="client-company"><i class="fa-solid fa-building"></i> TechStart Solutions</span>
+                    </div>
+                    <div class="client-status-badge active">Activo</div>
                 </div>
 
-                <div class="pos-items">
-                    <!-- Item 1 -->
-                    <div class="pos-item">
-                        <div class="item-thumb" style="background: #e2e8f0;">🎧</div>
-                        <div class="item-details">
-                            <h5>Auriculares F453</h5>
-                            <span class="discount">$200 <span class="tag">25% OFF</span></span>
-                        </div>
-                        <div class="item-action"><i class="fa-solid fa-trash-can"></i></div>
+                <div class="client-stats-row">
+                    <div class="client-stat">
+                        <span class="client-stat-value">$48,500</span>
+                        <span class="client-stat-label">Total compras</span>
                     </div>
-                    <!-- Item 2 -->
-                    <div class="pos-item">
-                        <div class="item-thumb" style="background: #f1f5f9;">🪴</div>
-                        <div class="item-details">
-                            <h5>Maceta Cerámica</h5>
-                            <span>$150</span>
-                        </div>
-                        <div class="item-action"><i class="fa-solid fa-trash-can"></i></div>
+                    <div class="client-stat">
+                        <span class="client-stat-value">12</span>
+                        <span class="client-stat-label">Pedidos</span>
+                    </div>
+                    <div class="client-stat">
+                        <span class="client-stat-value">98%</span>
+                        <span class="client-stat-label">Satisfacción</span>
                     </div>
                 </div>
 
-                <div class="pos-footer">
-                    <div class="totals">
-                        <span>Total</span>
-                        <span class="amount">$350.00</span>
+                <div class="client-tags">
+                    <span class="client-tag teal"><i class="fa-solid fa-star"></i> VIP</span>
+                    <span class="client-tag blue"><i class="fa-solid fa-repeat"></i> Recurrente</span>
+                    <span class="client-tag purple"><i class="fa-solid fa-gem"></i> Premium</span>
+                </div>
+
+                <div class="client-timeline">
+                    <div class="timeline-title">Actividad reciente</div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot green"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-text">Compra realizada — $3,200</span>
+                            <span class="timeline-time">Hace 2 horas</span>
+                        </div>
                     </div>
-                    <button class="btn-pay">Cobrar $350.00</button>
+                    <div class="timeline-item">
+                        <div class="timeline-dot blue"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-text">Email de seguimiento enviado</span>
+                            <span class="timeline-time">Ayer</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot purple"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-text">Reunión agendada — Renovación</span>
+                            <span class="timeline-time">Hace 3 días</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-actions">
+                    <button class="client-action-btn"><i class="fa-solid fa-envelope"></i></button>
+                    <button class="client-action-btn"><i class="fa-brands fa-whatsapp"></i></button>
+                    <button class="client-action-btn"><i class="fa-solid fa-phone"></i></button>
+                    <button class="client-action-btn primary"><i class="fa-solid fa-plus"></i> Nueva nota</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Detailed Feature: Inventory (Reversed Layout) -->
+<!-- Detailed Feature: Campaigns -->
 <section class="feature-spotlight reveal">
     <div class="container split-layout">
         <!-- Left: Campaigns Image -->
@@ -229,7 +348,7 @@
     </div>
 </section>
 
-<!-- Detailed Feature: CRM Pipeline (New) -->
+<!-- Detailed Feature: CRM Pipeline -->
 <section class="feature-spotlight reveal">
     <div class="container split-layout reverse-mobile">
         <!-- Left: Text Content -->
@@ -271,7 +390,7 @@
     </div>
 </section>
 
-<!-- Detailed Feature: Audit & Logs (New) -->
+<!-- Detailed Feature: Audit & Logs -->
 <section class="feature-spotlight reveal">
     <div class="container split-layout">
         <!-- Left: Audit Image -->
@@ -329,16 +448,15 @@
                 <p>Entiende tus números de un vistazo.</p>
             </div>
             <div class="feature-card reveal">
-                <div class="icon-box"><i class="fa-solid fa-shop"></i></div>
-                <h3>Punto de Venta</h3>
-                <p>Vende rápido y sin errores.</p>
+                <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
+                <h3>Oportunidades</h3>
+                <p>Gestiona tu pipeline de ventas completo.</p>
             </div>
             <div class="feature-card reveal">
                 <div class="icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                 <h3>Facturación</h3>
                 <p>Emite facturas en segundos.</p>
             </div>
-            <!-- New Cards -->
             <div class="feature-card reveal">
                 <div class="icon-box"><i class="fa-solid fa-boxes-stacked"></i></div>
                 <h3>Control de Inventario</h3>
@@ -353,6 +471,31 @@
                 <div class="icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
                 <h3>Acceso en la Nube</h3>
                 <p>Tu negocio disponible desde cualquier lugar.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta reveal">
+    <div class="container">
+        <div class="final-cta-card">
+            <div class="final-cta-glow"></div>
+            <h2 class="reveal">¿Listo para transformar tu negocio?</h2>
+            <p class="reveal">Descubre cómo Gnosis CRM puede simplificar la gestión de tu negocio. Comienza tu
+                prueba gratuita hoy.</p>
+            <div class="final-cta-buttons reveal">
+                <a (click)="onCtaClick()" class="btn-cta" style="cursor: pointer;">
+                    <i class="fa-solid fa-rocket"></i> Comenzar Gratis
+                </a>
+                <a routerLink="/contact" class="btn-secondary-outline">
+                    <i class="fa-solid fa-headset"></i> Hablar con Ventas
+                </a>
+            </div>
+            <div class="final-cta-trust reveal">
+                <span><i class="fa-solid fa-shield-halved"></i> Sin tarjeta de crédito</span>
+                <span><i class="fa-solid fa-clock"></i> Configuración en 5 min</span>
+                <span><i class="fa-solid fa-arrow-rotate-left"></i> Cancela cuando quieras</span>
             </div>
         </div>
     </div>
